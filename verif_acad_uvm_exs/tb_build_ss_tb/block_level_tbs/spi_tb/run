@@ -1,0 +1,58 @@
+# Run Leaf
+
+require "ovm-vtest.pl";
+&initialize;
+$main'set_timer_value = 500;
+$main'filter_assert_iterations = 1;
+$main'do_not_compare_vsim_args = 1;
+
+$ENV{'MTI_SVA_ON'} = 1;
+
+my $cwd = `pwd`;
+tee_log ("********** Running Test: $cwd");
+
+$compile_failure = 0;
+if (! $no_compile) {
+    &create_lib_all;
+
+    $vl_compile_failure = 0;
+    if ( -e "sv.list" ) {
+        $language = verilog;
+        $vl_compile_failure = &compile_all("", "sv.list");
+    }
+
+    $vhdl_compile_failure = 0;
+    if ( -e "vhd.list" ) {
+        $language = vhdl;
+        $vhdl_compile_failure = &compile_all("", "vhd.list");
+    }
+
+    $sc_compile_failure = 0;
+    if ( -e "systemc.list" ) {
+        $language = systemc;
+        $sc_compile_failure = &systemc_compile_all("", "systemc.list");
+
+        if ( ! $sc_compile_failure ) {
+            &do_link("-scv");
+        }
+    }
+
+    $compile_failure
+        = $vl_compile_failure
+        | $vhdl_compile_failure
+        | $sc_compile_failure;
+}
+
+if (!($no_sim || $compile_failure)) {
+    if (! &simulate_all("")) {
+		if (-e "compare.list") {
+        	&compare_all;
+		}
+		else {
+			&do_selfcheck;
+		}
+    }
+}
+
+&write_summary;
+

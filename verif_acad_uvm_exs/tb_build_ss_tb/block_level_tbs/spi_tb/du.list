@@ -1,0 +1,1 @@
+top_tb;+UVM_TESTNAME=spi_interrupt_test -c;vsim.do;transcript

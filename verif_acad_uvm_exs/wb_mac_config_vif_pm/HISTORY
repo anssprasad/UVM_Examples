@@ -1,0 +1,121 @@
+General description for the different directories used in development
+of a Wishbone bus (opencores.org) based system with multiple masters and slaves
+
+Mike Baird
+
+simple_wb_p2p
+ - point to point wishbone bus interface
+ - connection between a wishbone slave memory (opencores.org) and a wb driver
+
+simple_wb_1m1s
+ - Multiple connection wishbone bus
+ - 1 wb_master_driver and 1 wb slave memory
+ - wisbone operation sequences (read, write, etc.)
+
+simple_wb_bus_mm_ms
+ - Added ability to handle multiple (8) masters and multiple (8) slaves
+ - each wb_agent acts as a wishbone master
+ - Random wishbone traffic
+ - Scoreboarding of Wishbone memory space
+ 
+uvm_mac
+ - Added an Ethernet MAC (Ethmac) from opencores.org
+ - mac_agent with half duplex operation with a single driver for both Tx and Rx with the MAC single MAC sequencer
+ - mac tx_frame and rx_frame sequences
+ - simple directed MAC tests. layered sequence architecture
+ - irq wishbone sequence added for handling interrupts
+ 
+uvm_mac2
+ - mac_agent with full duplex operation
+ - two drivers one for Tx and one for Rx
+ - mac_agent has separate sequecers for the Tx and Rx miif_drivers
+ 
+uvm_mac3
+ - moved the waiting for IRQ handling down to the rx_frame_seq to facilitate
+   retries
+   
+uvm_mac4
+ - moved the waiting for IRQ handling down to the tx_frame_seq to facilitate
+   retries
+ - Simultaneous Tx and Rx frames supported now
+ - The Scoreboarding is not hooked up
+ - Simple directed tests sending and receiving frames
+ 
+uvm_mac5
+ - Added auto checking of the data in the wishbone memory on a Rx frame to the MAC
+ 
+uvm_mac6
+ - Added auto checking of the ethernet transactions received from the MAC
+ 
+uvm_mac6_nonscale_agent_org
+ - removed scaling so fixed at one MAC and one wb master
+ - changed file organization along agent lines instead of by functionality
+
+mac_duplex_7
+ - added wb_mem_scoreboard and removed analysis_group
+
+mac_duplex_8
+ - added mii scoreboard
+
+mac_duplex_9
+ - made wb_txn non-parameterized (easier for showing example)
+
+mac_duplex_10
+ - added notes on what to check for correct output
+ - added run.do file
+
+mac_duplex_11
+ - Made corrections to the ethernet packet type (fix SFD)
+ - Added qvl monitor for MII
+
+mac_duplex_12
+ - added registers package
+ - Implemented distributed register appoach
+ - modified controller sequence and mii sequences to use registers
+
+mac_duplex_13
+ - Added a reg_env with a reg monitor to update shadow registers
+ 
+mac_duplex_regs_14
+ - removed reg_env and replaced reg monitor with a wishbone mac register scoreboard
+ - created a base class for components that talk wishbone mac registers
+ 
+mac_duplex_regs_15
+ - Created a base class for sequences that talk to the wishbone bus and MAC
+ - MII sequences and the test controller derive from it 
+
+mac_duplex_regs_16
+ - Split the mii_agent into mii_rx and mii_tx agents
+ 
+mac_duplex_regs_17
+ - Created a config object to store all the configuration information
+ - instead of lots of set_config_int() and get_config_int()
+
+mac_duplex_regs_18
+ - Fixed bug in wb_bus_monitor - was not waiting for end of write cycle
+
+wb_mac_config_vif_19
+ - changed virtual interface assignment to use uvm_container instead of package
+ - created mii_config class as config object for mii bus
+
+wb_mac_config_vif_20
+ - deleted commented lines and changed some comments in various files
+ 
+wb_mac_config_vif_pm_20
+ - added protocol module
+ 
+wb_mac_config_vif_pm_21
+ - moved top_mac into top_modules dir
+ - added dut_params_pkg (into top_modules dir), modified top_mac and test to use this pkg
+ 
+wb_mac_config_viv_pm_22
+ - minor edits to the test, wb_config and main sequence to add comments.
+ 
+wb_mac_config_vif_pm_23
+ - changed wb_txn to not have field macros
+ - modified the dut_params_pkg to have a slave address range size and then used in test
+ 
+wb_mac_config_vif_pm_24
+ - changed dut_params_pkg to test_params_pkg
+ 
+  

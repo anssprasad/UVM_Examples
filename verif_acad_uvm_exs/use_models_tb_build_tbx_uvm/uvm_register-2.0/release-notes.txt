@@ -1,0 +1,360 @@
+Title: Release Notes
+
+RICH
+ 1 Remove RICH
+ 2 Remove TODO
+ 3 Check diff
+   cd mainline/ovm_register
+   diff -r src      ~/Release/ovm_register-1.0/src       > src.changes
+   diff -r examples ~/Release/ovm_register-1.0/examples/ > examples.changes
+ 4 Write the ./MigrationGuide.txt
+
+RICH
+
+ovm_component -> ovm_named_object
+  src/ovm_coherent_register.svh
+  src/ovm_fifo_register.svh
+  src/ovm_id_register.svh
+  src/ovm_memory.svh
+  src/ovm_modal_register.svh
+
+ovm_register_map::ovm_register_get_register_map has a this argument.
+  src/ovm_register_agent_pkg.svh
+
+
+  `define OVM_REGISTER_NOTIFY(SFX) \
+    class ovm_register_notify``SFX \
+    endclass
+
+  `define USE_NOTIFY(SFX, IMP) \
+  `define USE_GENERIC_NOTIFY(SFX, IMP) \
+  
+  
+  `define ovm_named_object_registry(T,S) \
+  `define ovm_named_object_registry_internal(T,S) \
+  `define ovm_named_object_utils(T) \
+  `define ovm_named_object_param_utils(T) \
+  `define ovm_named_object_utils_begin(T) \
+  `define ovm_named_object_param_utils_begin(T) \
+  `define ovm_named_object_utils_end \
+
+  src/ovm_register_macros.svh
+
+Added new functionality/register support
+
+   `include "ovm_named_object.sv"
+   `include "ovm_named_object_registry.svh"
+ 
+   `include "ovm_notification.svh"
+ 
+   `include "ovm_register_misc.svh"
+   `include "ovm_broadcast_register.svh"
+   `include "ovm_indirect_register.svh"
+
+  src/ovm_register_pkg.sv
+
+Added register deprecation notices.
+Changed ovm_register_base from ovm_transaction to ovm_named_object
+Got rid of ovm_register_base::register_container
+Change ovm_component "parent" class type to ovm_named_object.
+Added UNPREDICTABLEMASK.
+Enhanced bus_read_bv() error message.
+Set a register initial values to its reset value automatically.
+
+Added mapped_register_container (replaces ovm_register_map_base)
+You can now add a register file to another register file (in addition to all
+previous behavior)
+
+  src/ovm_register.svh
+
+--------------------------------------       
+Topics: ovm_register-2.0 March 2, 2010 
+--------------------------------------       
+New files:
+  ovm_broadcast_register.svh
+  ovm_indirect_register.svh
+
+Updated examples
+  11_masking_notification
+
+New examples:
+  14_register_map_lookup
+  15_backdoor
+  16_apb_zin
+  17_broadcast_registers
+  18_ap_notification
+  19_constraints
+  20_simple_indirect
+
+Adds support for:
+  - Hierarchical address maps
+  - Register alias names
+  - Add a register file into a register file.
+
+Compatibility Issues:
+  New Register Inheritance
+    In register definitions, the register parent used to
+    be 'ovm_component'. It is now 'ovm_named_object'.
+    You must change the register construction definition:
+
+    Old:
+    <   function new(string name, ovm_component p);
+    New:
+    >   function new(string name, ovm_named_object p);
+
+  Lightweight analysis ports
+
+  Constructor arguments.
+  Creating registers using the factory.
+
+  reset() uses poke() now instead of write().
+
+  ReadOnly bits can be updated by the shadow.....???????
+
+Versions supported:
+  - Tested on Questa 6.4[a,b,c,d,e] and 6.5[a,b].
+  - Tested on Windows and Linux. 
+  - Tested with OVM 2.0, OVM 2.0.1 and OVM 2.0.2.
+
+New in 1.0 Beta 9:
+  + Hierarchical register maps
+  + "Alias" names for registers
+
+Changes in 1.0 beta 9:
+  bus_read_bv() message changed to be more informative.
+
+
+--------------------------------------       
+Topics: ovm_register-1.0 Beta 8 June 29, 2009
+--------------------------------------       
+
+New files:
+    + src/ovm_coherent_register.svh
+    + src/ovm_fifo_register.svh
+    + src/ovm_memory.svh
+    + src/ovm_register_macros.svh
+
+Adds support for:
+    + coherent registers
+    + fifo registers
+    + semaphore locking
+    + simple memory interface
+    + field access "by name"
+
+  Extends support for various field and register
+  permissions and usages. For example a field can now
+  have "RW" permission when accessed from one bus, and
+  "RO" permission when accessed from another bus.
+
+  --------------------------------
+  - Added support for simple memory api (See 09_memory_simple).
+  - Added support for coherent registers (See 10_coherent_registers).
+  - Added support for more access policies and for 
+    register permissions based on address. 
+    (11_masking_notification)
+  - Added support for fifo registers (12_fifo_registers).
+  - Added support for "by name" access to fields 
+    (13_field_by_name).
+
+  - NO API changes which break backward compatibility.
+
+Versions supported:
+  - Tested on Questa 6.4a, 6.4b, 6.4c and 6.5.
+  - Tested on Windows and Linux. 
+  - Tested with OVM 2.0 and OVM 2.0.1.
+
+New in 1.0 Beta 8:
+  + Coherent register types
+
+  + FIFO register types
+
+  + Simple Semaphore locking on registers
+
+  + Field Access By Name
+
+  + Simple Memory API.
+    Memory functionality will be expanded in a future release
+    with backward compatible API.
+
+  + Assigning register access policy based on address.
+    Adds support for registers which have one kind
+    of permission when they are accessed via bus 1,
+    and another kind of permission when they are accessed via
+    bus 2. For example, regA is RW on the AHB bus, but RO
+    on the I2C bus.
+
+Changes in 1.0 beta 8:
+
+  + Enhanced field and register access policies.
+    The complete list is now RW, RO, WO, 
+    Clear-on-Read, Set-on-Read, Write-Zero-to-Set
+    and Write-One-to-Clear.
+
+
+--------------------------------------       
+Topics: ovm_register-1.0 Beta 7 March 26, 2009
+--------------------------------------       
+
+  Adds support for backdoor access, an id register implementation
+  and a modal register implementation.
+
+  --------------------------------
+  - Added support for library backdoor access and test (05_backdoor_simple).
+  - Added example 'id_register' implementation and test (06_id_registers).
+  - Added a modal register implementation and test (08_register_field_modes)
+  - Normalized some API function names.
+  - NO API changes.
+
+  --------------------------------
+  - Tested on Questa 6.4a, 6.4b, 6.4c and 6.5.
+  - Tested on Windows and Linux. 
+  - Tested with OVM 2.0 and OVM 2.0.1.
+
+New in 1.0 Beta 7:
+ 
+ + Added backdoor access support via a C implementation.
+   If you want to use backdoor access, then you must compile 
+   the DPI C code. (Pre-compiled libraries for linux, 
+   linux_x86_64 and cygwin are shipped with the library)
+   (There is a makefile provided, but you may need to modify to
+   suit).
+
+:    vlog +incdir+$(OVM_HOME)/src+$(OVM_REGISTER_HOME)/src \
+:      +define+BACKDOOR_DPI \
+:      $(OVM_REGISTER_HOME)/src/ovm_register_pkg.sv
+
+ + Added new examples
+
+   05_backdoor_simple:
+   05_backdoor_simple is a simple example of using the
+   shadow register to write directly to an HDL path name.
+   (via the PLI - a backdoor into the design).
+
+   06_id_register: 
+   06_id_register is an example of a special functionality
+   in a register - an ID register. This ID register is not
+   a general purpose register, but is provided to use as
+   is or as a demonstration of how to create your own
+   special purpose register functionality. See
+   ovm_id_register.svh
+
+   08_register_field_modes:
+   08_register_field_modes is an example of a special functionality
+   in a register - a modal register. This modal register is
+   a register whose field representation changes depending on which
+   mode it is in. It is provided as a demonstration of using
+   modes. It is expected that most modal registers are customer
+   specific, and so this modal register and example serves
+   as a template for customization.
+
+Changes in 1.0 beta 7:
+  + Changed ovm_register-1.0beta7/src/ovm_register.svh
+
+    Added backdoor access support.
+
+    Normalized names. Raw access is peek_*() or poke_*().
+      Masked access is read_data32() or write_data32()
+      (set_data32() still exists but is 
+       deprecated in favor of peek_data32())
+
+    Added get_byte_array_no_masking().
+
+    Cleaned up error messaging.
+  
+  + Added ovm_register-1.0beta7/src/ovm_register_dpi.c
+    and   ovm_register-1.0beta7/src/ovm_register_dpi.svh
+
+    Backdoor implementation.
+  
+  + Changed ovm_register-1.0beta7/src/ovm_register_env_pkg.svh
+
+    Message printing fixed.
+  
+--------------------------------------       
+Topic: ovm_register-1.0 Beta 6 January 16, 2009
+--------------------------------------       
+
+   Added additional examples. Instrumented library with MACROS. 
+   NO API changes.
+
+  --------------------------------
+  - Tested on Questa 6.4a, 6.4b, 6.4c and 6.5 Beta.
+  - Tested on Windows and Linux. 
+  - Tested with OVM 2.0 and OVM 2.0.1.
+
+New in 1.0 Beta 6:
+  Added new examples 
+    02_register_transactions
+    03_layered_sequences
+    04_simple_bus
+  
+  01_bus_transactions contains new sequences and interesting
+  constraints. All register fields can be random in this 
+  example.
+  
+  02_register_transactions is simple example that builds a
+  driver and a sequencer for register transactions. Register
+  sequence is started, and the register driver prints them.
+  
+  03_layered_register_sequences is a simple example that
+  builds a layer of register transactions over bus 
+  transactions. The register transactions generated from the 
+  automatic test are converted into bus specific transactions.
+  
+  04_simple_bus is a simple example that shows a bus with
+  an OVC-style component integrated to a register test.
+
+Changes in 1.0 beta 6:
+
+  Library components changes:
+
+  Added factory registration for all library components.
+  Added field automation.
+
+  - Changed auto test default sequence name from
+      register_sequence_all_registers_REQ_RSP
+    to
+      register_sequence_all_registers#(REQ, RSP)
+
+  - ovm_register.svh: 
+    Removed 'class ovm_register_monitor' (not used)
+
+  - ovm_register_agent_pkg.svh:
+    Changed the name of ovm_register_scoreboard 
+      to ovm_register_monitor.
+
+  - ovm_register_env_pkg.svh:
+    Instantiated a register_bus_monitor to publish
+    register transactions to the built in scoreboard.
+
+  Copyrights adjusted from 2008 to 2009.
+  Changed base type of ovm_register_bus_driver 
+    from ovm_threaded_component to ovm_component.
+  Changed base type of ovm_register_auto_test
+    from ovm_threaded_component to ovm_component.
+    
+
+--------------------------------------       
+Topic: ovm_register-1.0 Beta 5 December 22, 2008
+--------------------------------------       
+
+General housecleaning. Added NaturalDocs automated
+documentation generation.
+
+- Tested on Questa 6.4, 6.4a, 6.4b, 6.4c and 6.5 Beta 1.
+- Tested on Windows and Linux. 
+- Tested with OVM 2.0 and OVM 2.0.1.
+
+Package name changed to 'ovm_register_pkg'.
+Use it as
+  import ovm_register_pkg::*;
+
+Added Natural Docs comments to allow HTML documentation
+generation.
+
+Future development plans (suggestions/priority welcome):
+  1) Example register verification on an XBUS OVC.
+  2) Backdoor access.
+  3) Auto-generation of SystemVerilog register definitions
+     from a standard format.
+  4) Memory support.

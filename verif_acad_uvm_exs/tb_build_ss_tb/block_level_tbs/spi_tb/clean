@@ -1,0 +1,4 @@
+require "globals.pl";
+require "cleanup.pl";
+&basic_cleanup;
+&cleanup_subdirs;

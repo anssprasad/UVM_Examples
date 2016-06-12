@@ -1,0 +1,16 @@
+  +incdir+../../rtl/spi/rtl/verilog ../../rtl/spi/rtl/verilog/*.v  
+  +incdir+$UVM_REGISTER_HOME/src $UVM_REGISTER_HOME/src/uvm_register_pkg.sv
+  +incdir+../../agents/register_layering ../../agents/register_layering/register_layering_pkg.sv
+  +incdir+../../agents/apb_agent ../../agents/apb_agent/apb_agent_pkg.sv
+  +incdir+../../agents/spi_agent ../../agents/spi_agent/spi_agent_pkg.sv
+  +incdir+register_model register_model/spi_register_pkg.sv
+  ../../agents/apb_agent/apb_if.sv -timescale 1ns/10ps
+  ../../agents/spi_agent/spi_if.sv -timescale 1ns/10ps
+  tb/intr_if.sv -timescale 1ns/10ps
+  +incdir+env env/spi_env_pkg.sv
+  +incdir+sequences sequences/spi_bus_sequence_lib_pkg.sv
+  +incdir+sequences sequences/spi_sequence_lib_pkg.sv
+  +incdir+sequences sequences/spi_virtual_seq_lib_pkg.sv
+  +incdir+test test/spi_test_lib_pkg.sv
+  -timescale 1ns/10ps +incdir+../../rtl/spi/rtl/verilog tb/top_tb.sv
+  

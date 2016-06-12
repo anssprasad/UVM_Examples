@@ -1,0 +1,78 @@
+# vsim +UVM_USE_OVM_RUN_SEMANTIC +UVM_TESTNAME=spi_interrupt_test -do vsim.do -c -sv_lib /net/runner/export/home/users/vtech/kahmad/ovm_nightly/uvm-vtech/uvm-1.0p1/lib/uvm_dpi top_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../rtl/spi/rtl/verilog/spi_top.v(123): (vopt-2249) Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: ../../rtl/spi/rtl/verilog/spi_top.v(123): (vopt-2249) Non-positive replication multiplier inside concat. Replication will be ignored.
+# //  ModelSim SE 10.0a Feb 21 2011 Linux 2.6.9-55.ELsmp
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.spi_agent_pkg
+# Loading work.spi_sequence_lib_pkg
+# Loading work.register_layering_pkg
+# Loading work.apb_agent_pkg
+# Loading work.uvm_register_pkg
+# Loading work.spi_register_pkg
+# Loading work.spi_env_pkg
+# Loading work.spi_bus_sequence_lib_pkg
+# Loading work.spi_virtual_seq_lib_pkg
+# Loading work.uvm_container_pkg
+# Loading work.spi_test_lib_pkg
+# Loading work.top_tb(fast)
+# Loading work.apb_if(fast)
+# Loading work.spi_top(fast)
+# ** Warning: (vsim-8607) ../../rtl/spi/rtl/verilog/spi_top.v(123): Non-positive replication multiplier inside concat. Replication will be ignored.
+# Loading /net/runner/export/home/users/vtech/kahmad/ovm_nightly/uvm-vtech/uvm-1.0p1/lib/uvm_dpi.so
+# do vsim.do 
+# resume
+# ----------------------------------------------------------------
+# UVM-1.0p2-dev
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# (C) 2011      Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# UVM Register Package Version 2.0
+# (C) 2007-2010 Mentor Graphics Corporation
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [APB_vif] Setting Container
+# UVM_INFO @ 0: reporter [SPI_vif] Setting Container
+# UVM_INFO @ 0: reporter [INTR_vif] Setting Container
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_interrupt_test...
+# UVM_INFO @ 53100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 51deebc6c4cc8804b4c7cc97fbe7f537 RX_NEG State 1, no of bits 126
+# UVM_INFO @ 65411100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: d4b90144c43f973cb288a0c43be78c35 RX_NEG State 0, no of bits 96
+# UVM_INFO @ 65881000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: c7108e1b6d8fb4fd2d451c52a2f0274a RX_NEG State 1, no of bits 97
+# UVM_INFO @ 66355000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: cac95e149079e1e18aa4b28163d0ce44 RX_NEG State 0, no of bits 127
+# UVM_INFO @ 71029100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: bba5c264671e5e82eef4dbe39bb7868d RX_NEG State 1, no of bits 32
+# UVM_INFO @ 72283000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: b28504ee1490219d0a1c9775dbb63f4b RX_NEG State 1, no of bits 97
+# UVM_INFO @ 75877100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 9c339c403965e3061d374fec5361e001 RX_NEG State 0, no of bits 126
+# UVM_INFO @ 92659000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 22bad5c1972544d8bb51c181231aa8b RX_NEG State 0, no of bits 96
+# UVM_INFO @ 99305100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 71bed8d2b2861ef4b9fdecbd11ffdb1e RX_NEG State 0, no of bits 63
+# UVM_INFO @ 100151000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 75a497f0b0f67785f4eea685ab992a5 RX_NEG State 0, no of bits 31
+# UVM_INFO @ 100323000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO @ 100323000: uvm_test_top.m_env.m_scoreboard [SPI_SB_REPORT:] Test Passed - 10 transfers occured with no errors
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   16
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [APB_vif]     1
+# [INTR_vif]     1
+# [RNTST]     1
+# [SPI_DRV_RUN:]    10
+# [SPI_SB_REPORT:]     1
+# [SPI_vif]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /export/home/users/vtech/kahmad/ovm_nightly/uvm_git/uvm/distrib//src/base/uvm_root.svh(408)
+#    Time: 1003230 ns  Iteration: 49  Instance: /top_tb

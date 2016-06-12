@@ -1,0 +1,3667 @@
+Only in .: lib
+Only in .: ovm2uvm_5971.patch
+diff -r ./README.txt /tmp/Q8Mg5N9wNc/README.txt
+3c3
+< OVM REGISTER - OVM Register Package
+---
+> UVM REGISTER - UVM Register Package
+6c6
+<  The OVM Register package provides base class
+---
+>  The UVM Register package provides base class
+10,12c10,12
+<  The OVM Register package requires an OVM installation
+<  in order to run. If you do not already have the OVM,
+<  you should download and unpack it from <http://www.ovmworld.org>.
+---
+>  The UVM Register package requires an UVM installation
+>  in order to run. If you do not already have the UVM,
+>  you should download and unpack it from <http://www.uvmworld.org>.
+15c15
+< OVM Register Package Contents:
+---
+> UVM Register Package Contents:
+17,18c17,18
+<   User Guide (BETA)     - OVM-Register-User-Guide-BETA.pdf
+<   Reference Guide       - OVM-Register-Reference-Guide.html
+---
+>   User Guide (BETA)     - UVM-Register-User-Guide-BETA.pdf
+>   Reference Guide       - UVM-Register-Reference-Guide.html
+26c26
+< The OVM Register library (src/):
+---
+> The UVM Register library (src/):
+28c28
+<    src/ovm_register_pkg.sv  - The OVM Register package 
+---
+>    src/uvm_register_pkg.sv  - The UVM Register package 
+31c31
+<    src/ovm_register.svh     - The register library and address 
+---
+>    src/uvm_register.svh     - The register library and address 
+34c34
+<    src/ovm_register_agent_pkg.svh - Useful parts that make 
+---
+>    src/uvm_register_agent_pkg.svh - Useful parts that make 
+37c37
+<    src/ovm_register_auto_test.svh - Hook for users to get 
+---
+>    src/uvm_register_auto_test.svh - Hook for users to get 
+40c40
+<    src/ovm_register_env_pkg.svh   - A useful ENV which is 
+---
+>    src/uvm_register_env_pkg.svh   - A useful ENV which is 
+44c44
+<    src/ovm_register_sequences_pkg.svh   - Automatic sequences 
+---
+>    src/uvm_register_sequences_pkg.svh   - Automatic sequences 
+46c46
+<    src/ovm_register_transaction_pkg.svh - Transaction 
+---
+>    src/uvm_register_transaction_pkg.svh - Transaction 
+49c49
+<    src/ovm_register_version.svh         - Version string
+---
+>    src/uvm_register_version.svh         - Version string
+51,52c51,52
+<    src/ovm_id_register.svh              - An ID register implementation
+<    src/ovm_modal_register.svh           - A modal register implementation
+---
+>    src/uvm_id_register.svh              - An ID register implementation
+>    src/uvm_modal_register.svh           - A modal register implementation
+55c55
+< The OVM Register Library Examples:
+---
+> The UVM Register Library Examples:
+233c233
+< How to Install OVM:
+---
+> How to Install UVM:
+235c235
+<  Get the OVM distribution. (ovm-xxx.tar.gz)
+---
+>  Get the UVM distribution. (uvm-xxx.tar.gz)
+238c238
+<    Go to <http://www.ovmworld.org>
+---
+>    Go to <http://www.uvmworld.org>
+240c240
+<  Unpack the OVM distribution.
+---
+>  Unpack the UVM distribution.
+242c242
+< :   tar zxvf ovm-xxx.tar.gz
+---
+> :   tar zxvf uvm-xxx.tar.gz
+245c245
+< How to Install OVM Register Package:
+---
+> How to Install UVM Register Package:
+247c247
+<  Get the OVM Register distribution. (ovm_register-xxx.tar.gz)
+---
+>  Get the UVM Register distribution. (uvm_register-xxx.tar.gz)
+249c249
+<  Unpack the OVM Register distribution.
+---
+>  Unpack the UVM Register distribution.
+251c251
+< :   tar zxvf ovm_register-xxx.tar.gz
+---
+> :   tar zxvf uvm_register-xxx.tar.gz
+254c254
+< How to run the OVM Register examples:
+---
+> How to run the UVM Register examples:
+256c256
+<  Change to the OVM REgister directory.
+---
+>  Change to the UVM REgister directory.
+258c258
+< :   cd ovm_register-xxx/
+---
+> :   cd uvm_register-xxx/
+264c264
+<  Point at your OVM installation. Or edit the
+---
+>  Point at your UVM installation. Or edit the
+267c267
+< :   setenv OVM <OVM_INSTALL_DIR>/ovm
+---
+> :   setenv UVM <UVM_INSTALL_DIR>/uvm
+diff -r ./release-notes.txt /tmp/Q8Mg5N9wNc/release-notes.txt
+7,9c7,9
+<    cd mainline/ovm_register
+<    diff -r src      ~/Release/ovm_register-1.0/src       > src.changes
+<    diff -r examples ~/Release/ovm_register-1.0/examples/ > examples.changes
+---
+>    cd mainline/uvm_register
+>    diff -r src      ~/Release/uvm_register-1.0/src       > src.changes
+>    diff -r examples ~/Release/uvm_register-1.0/examples/ > examples.changes
+14,19c14,19
+< ovm_component -> ovm_named_object
+<   src/ovm_coherent_register.svh
+<   src/ovm_fifo_register.svh
+<   src/ovm_id_register.svh
+<   src/ovm_memory.svh
+<   src/ovm_modal_register.svh
+---
+> uvm_component -> uvm_named_object
+>   src/uvm_coherent_register.svh
+>   src/uvm_fifo_register.svh
+>   src/uvm_id_register.svh
+>   src/uvm_memory.svh
+>   src/uvm_modal_register.svh
+21,22c21,22
+< ovm_register_map::ovm_register_get_register_map has a this argument.
+<   src/ovm_register_agent_pkg.svh
+---
+> uvm_register_map::uvm_register_get_register_map has a this argument.
+>   src/uvm_register_agent_pkg.svh
+25,26c25,26
+<   `define OVM_REGISTER_NOTIFY(SFX) \
+<     class ovm_register_notify``SFX \
+---
+>   `define UVM_REGISTER_NOTIFY(SFX) \
+>     class uvm_register_notify``SFX \
+33,39c33,39
+<   `define ovm_named_object_registry(T,S) \
+<   `define ovm_named_object_registry_internal(T,S) \
+<   `define ovm_named_object_utils(T) \
+<   `define ovm_named_object_param_utils(T) \
+<   `define ovm_named_object_utils_begin(T) \
+<   `define ovm_named_object_param_utils_begin(T) \
+<   `define ovm_named_object_utils_end \
+---
+>   `define uvm_named_object_registry(T,S) \
+>   `define uvm_named_object_registry_internal(T,S) \
+>   `define uvm_named_object_utils(T) \
+>   `define uvm_named_object_param_utils(T) \
+>   `define uvm_named_object_utils_begin(T) \
+>   `define uvm_named_object_param_utils_begin(T) \
+>   `define uvm_named_object_utils_end \
+41c41
+<   src/ovm_register_macros.svh
+---
+>   src/uvm_register_macros.svh
+45,46c45,46
+<    `include "ovm_named_object.sv"
+<    `include "ovm_named_object_registry.svh"
+---
+>    `include "uvm_named_object.sv"
+>    `include "uvm_named_object_registry.svh"
+48c48
+<    `include "ovm_notification.svh"
+---
+>    `include "uvm_notification.svh"
+50,52c50,52
+<    `include "ovm_register_misc.svh"
+<    `include "ovm_broadcast_register.svh"
+<    `include "ovm_indirect_register.svh"
+---
+>    `include "uvm_register_misc.svh"
+>    `include "uvm_broadcast_register.svh"
+>    `include "uvm_indirect_register.svh"
+54c54
+<   src/ovm_register_pkg.sv
+---
+>   src/uvm_register_pkg.sv
+57,59c57,59
+< Changed ovm_register_base from ovm_transaction to ovm_named_object
+< Got rid of ovm_register_base::register_container
+< Change ovm_component "parent" class type to ovm_named_object.
+---
+> Changed uvm_register_base from uvm_transaction to uvm_named_object
+> Got rid of uvm_register_base::register_container
+> Change uvm_component "parent" class type to uvm_named_object.
+64c64
+< Added mapped_register_container (replaces ovm_register_map_base)
+---
+> Added mapped_register_container (replaces uvm_register_map_base)
+68c68
+<   src/ovm_register.svh
+---
+>   src/uvm_register.svh
+71c71
+< Topics: ovm_register-2.0 March 2, 2010 
+---
+> Topics: uvm_register-2.0 March 2, 2010 
+74,75c74,75
+<   ovm_broadcast_register.svh
+<   ovm_indirect_register.svh
+---
+>   uvm_broadcast_register.svh
+>   uvm_indirect_register.svh
+97c97
+<     be 'ovm_component'. It is now 'ovm_named_object'.
+---
+>     be 'uvm_component'. It is now 'uvm_named_object'.
+101c101
+<     <   function new(string name, ovm_component p);
+---
+>     <   function new(string name, uvm_component p);
+103c103
+<     >   function new(string name, ovm_named_object p);
+---
+>     >   function new(string name, uvm_named_object p);
+117c117
+<   - Tested with OVM 2.0, OVM 2.0.1 and OVM 2.0.2.
+---
+>   - Tested with UVM 2.0, UVM 2.0.1 and UVM 2.0.2.
+128c128
+< Topics: ovm_register-1.0 Beta 8 June 29, 2009
+---
+> Topics: uvm_register-1.0 Beta 8 June 29, 2009
+132,135c132,135
+<     + src/ovm_coherent_register.svh
+<     + src/ovm_fifo_register.svh
+<     + src/ovm_memory.svh
+<     + src/ovm_register_macros.svh
+---
+>     + src/uvm_coherent_register.svh
+>     + src/uvm_fifo_register.svh
+>     + src/uvm_memory.svh
+>     + src/uvm_register_macros.svh
+164c164
+<   - Tested with OVM 2.0 and OVM 2.0.1.
+---
+>   - Tested with UVM 2.0 and UVM 2.0.1.
+195c195
+< Topics: ovm_register-1.0 Beta 7 March 26, 2009
+---
+> Topics: uvm_register-1.0 Beta 7 March 26, 2009
+211c211
+<   - Tested with OVM 2.0 and OVM 2.0.1.
+---
+>   - Tested with UVM 2.0 and UVM 2.0.1.
+222c222
+< :    vlog +incdir+$(OVM_HOME)/src+$(OVM_REGISTER_HOME)/src \
+---
+> :    vlog +incdir+$(UVM_HOME)/src+$(UVM_REGISTER_HOME)/src \
+224c224
+< :      $(OVM_REGISTER_HOME)/src/ovm_register_pkg.sv
+---
+> :      $(UVM_REGISTER_HOME)/src/uvm_register_pkg.sv
+239c239
+<    ovm_id_register.svh
+---
+>    uvm_id_register.svh
+251c251
+<   + Changed ovm_register-1.0beta7/src/ovm_register.svh
+---
+>   + Changed uvm_register-1.0beta7/src/uvm_register.svh
+264,265c264,265
+<   + Added ovm_register-1.0beta7/src/ovm_register_dpi.c
+<     and   ovm_register-1.0beta7/src/ovm_register_dpi.svh
+---
+>   + Added uvm_register-1.0beta7/src/uvm_register_dpi.c
+>     and   uvm_register-1.0beta7/src/uvm_register_dpi.svh
+269c269
+<   + Changed ovm_register-1.0beta7/src/ovm_register_env_pkg.svh
+---
+>   + Changed uvm_register-1.0beta7/src/uvm_register_env_pkg.svh
+274c274
+< Topic: ovm_register-1.0 Beta 6 January 16, 2009
+---
+> Topic: uvm_register-1.0 Beta 6 January 16, 2009
+283c283
+<   - Tested with OVM 2.0 and OVM 2.0.1.
+---
+>   - Tested with UVM 2.0 and UVM 2.0.1.
+319,320c319,320
+<   - ovm_register.svh: 
+<     Removed 'class ovm_register_monitor' (not used)
+---
+>   - uvm_register.svh: 
+>     Removed 'class uvm_register_monitor' (not used)
+322,324c322,324
+<   - ovm_register_agent_pkg.svh:
+<     Changed the name of ovm_register_scoreboard 
+<       to ovm_register_monitor.
+---
+>   - uvm_register_agent_pkg.svh:
+>     Changed the name of uvm_register_scoreboard 
+>       to uvm_register_monitor.
+326c326
+<   - ovm_register_env_pkg.svh:
+---
+>   - uvm_register_env_pkg.svh:
+331,334c331,334
+<   Changed base type of ovm_register_bus_driver 
+<     from ovm_threaded_component to ovm_component.
+<   Changed base type of ovm_register_auto_test
+<     from ovm_threaded_component to ovm_component.
+---
+>   Changed base type of uvm_register_bus_driver 
+>     from uvm_threaded_component to uvm_component.
+>   Changed base type of uvm_register_auto_test
+>     from uvm_threaded_component to uvm_component.
+338c338
+< Topic: ovm_register-1.0 Beta 5 December 22, 2008
+---
+> Topic: uvm_register-1.0 Beta 5 December 22, 2008
+346c346
+< - Tested with OVM 2.0 and OVM 2.0.1.
+---
+> - Tested with UVM 2.0 and UVM 2.0.1.
+348c348
+< Package name changed to 'ovm_register_pkg'.
+---
+> Package name changed to 'uvm_register_pkg'.
+350c350
+<   import ovm_register_pkg::*;
+---
+>   import uvm_register_pkg::*;
+diff -r ./src/ovm_broadcast_register.svh /tmp/Q8Mg5N9wNc/src/ovm_broadcast_register.svh
+20,21c20,21
+< class ovm_broadcast_register #(type T = int) 
+<     extends ovm_register#(T);
+---
+> class uvm_broadcast_register #(type T = int) 
+>     extends uvm_register#(T);
+25c25
+<   //TODO: Can this be ovm_register_base once the
+---
+>   //TODO: Can this be uvm_register_base once the
+27c27
+<   ovm_register #(T) targets[$];
+---
+>   uvm_register #(T) targets[$];
+29c29
+<   function new(string name, ovm_named_object p);
+---
+>   function new(string name, uvm_named_object p);
+36c36
+<   virtual function void add_target(ovm_register #(T) r);
+---
+>   virtual function void add_target(uvm_register #(T) r);
+diff -r ./src/ovm_coherent_register.svh /tmp/Q8Mg5N9wNc/src/ovm_coherent_register.svh
+20c20
+< // CLASS: ovm_coherent_register_slave
+---
+> // CLASS: uvm_coherent_register_slave
+28,29c28,29
+< class ovm_coherent_register_slave #(type T = int) 
+<     extends ovm_register #(T);
+---
+> class uvm_coherent_register_slave #(type T = int) 
+>     extends uvm_register #(T);
+32c32
+<   function new(string name, ovm_named_object p);
+---
+>   function new(string name, uvm_named_object p);
+63c63
+< // CLASS: ovm_coherent_register_master
+---
+> // CLASS: uvm_coherent_register_master
+70,71c70,71
+< class ovm_coherent_register_master #(type T = int) 
+<     extends ovm_register#(T);
+---
+> class uvm_coherent_register_master #(type T = int) 
+>     extends uvm_register#(T);
+75c75
+<   ovm_coherent_register_slave #(T) slaves[$];
+---
+>   uvm_coherent_register_slave #(T) slaves[$];
+77c77
+<   function new(string name, ovm_named_object p);
+---
+>   function new(string name, uvm_named_object p);
+84c84
+<       add_slave(ovm_coherent_register_slave#(T) r);
+---
+>       add_slave(uvm_coherent_register_slave#(T) r);
+diff -r ./src/ovm_fifo_register.svh /tmp/Q8Mg5N9wNc/src/ovm_fifo_register.svh
+21c21
+<   // CLASS: ovm_fifo_register
+---
+>   // CLASS: uvm_fifo_register
+29,30c29,30
+<   class ovm_fifo_register #(type T = bit[31:0]) 
+<       extends ovm_register#(T);
+---
+>   class uvm_fifo_register #(type T = bit[31:0]) 
+>       extends uvm_register#(T);
+34c34
+<     function new(string name, ovm_named_object p);
+---
+>     function new(string name, uvm_named_object p);
+65c65
+< 	    ovm_report_error("FIFO Register", 
+---
+> 	    uvm_report_error("FIFO Register", 
+diff -r ./src/ovm_id_register.svh /tmp/Q8Mg5N9wNc/src/ovm_id_register.svh
+21c21
+<   // CLASS: ovm_id_register
+---
+>   // CLASS: uvm_id_register
+30,31c30,31
+<   class ovm_id_register #(type T = bit[31:0]) 
+<       extends ovm_register#(T);
+---
+>   class uvm_id_register #(type T = bit[31:0]) 
+>       extends uvm_register#(T);
+57c57
+<     function new(string name, ovm_named_object p, T new_values[]);
+---
+>     function new(string name, uvm_named_object p, T new_values[]);
+diff -r ./src/ovm_indirect_register.svh /tmp/Q8Mg5N9wNc/src/ovm_indirect_register.svh
+21,22c21,22
+<   // CLASS: ovm_indirect_register 
+<   //    and ovm_indirect_address_register
+---
+>   // CLASS: uvm_indirect_register 
+>   //    and uvm_indirect_address_register
+43,44c43,44
+<   class ovm_indirect_register #(type T = bit[31:0]) 
+<       extends ovm_register#(T);
+---
+>   class uvm_indirect_register #(type T = bit[31:0]) 
+>       extends uvm_register#(T);
+49c49
+<     function new(string name, ovm_named_object p);
+---
+>     function new(string name, uvm_named_object p);
+130,131c130,131
+<   // CLASS: ovm_indirect_address_register
+<   // Used in conjunction with ovm_indirect_register.
+---
+>   // CLASS: uvm_indirect_address_register
+>   // Used in conjunction with uvm_indirect_register.
+134,135c134,135
+<   class ovm_indirect_address_register 
+<     #(type T = bit[31:0]) extends ovm_register#(T);
+---
+>   class uvm_indirect_address_register 
+>     #(type T = bit[31:0]) extends uvm_register#(T);
+137c137
+<       local ovm_indirect_register #(T) r;
+---
+>       local uvm_indirect_register #(T) r;
+139c139
+<       function new(string name, ovm_named_object p);
+---
+>       function new(string name, uvm_named_object p);
+147,148c147,148
+<         ovm_indirect_register #(T) r);
+<         ovm_report_info("AddressRegister", 
+---
+>         uvm_indirect_register #(T) r);
+>         uvm_report_info("AddressRegister", 
+160c160
+<         //ovm_report_info("AddressRegister", 
+---
+>         //uvm_report_info("AddressRegister", 
+171c171
+<         //ovm_report_info("AddressRegister", 
+---
+>         //uvm_report_info("AddressRegister", 
+diff -r ./src/ovm_memory_ranges.svh /tmp/Q8Mg5N9wNc/src/ovm_memory_ranges.svh
+21,22c21,22
+< // CLASS: ovm_memory_ranges
+< // The class ovm_memory_ranges contains a list of ranges, sorted by
+---
+> // CLASS: uvm_memory_ranges
+> // The class uvm_memory_ranges contains a list of ranges, sorted by
+35,36c35,36
+< class ovm_memory_ranges;
+<   rand ovm_memory_range ranges[];
+---
+> class uvm_memory_ranges;
+>   rand uvm_memory_range ranges[];
+76c76
+<   local function void m_add_r(ovm_memory_range r);
+---
+>   local function void m_add_r(uvm_memory_range r);
+92c92
+<   local function ovm_memory_range m_new_range_random(
+---
+>   local function uvm_memory_range m_new_range_random(
+95c95
+<     ovm_memory_range r = new();
+---
+>     uvm_memory_range r = new();
+109c109
+<   virtual function ovm_memory_range add_range(
+---
+>   virtual function uvm_memory_range add_range(
+114c114
+<     ovm_memory_range r = m_new_range_random(l_tag_name);
+---
+>     uvm_memory_range r = m_new_range_random(l_tag_name);
+142c142
+<   virtual function ovm_memory_range add_range_random_by_hand(
+---
+>   virtual function uvm_memory_range add_range_random_by_hand(
+144c144
+<     ovm_memory_range r = m_new_range_random(l_tag_name);
+---
+>     uvm_memory_range r = m_new_range_random(l_tag_name);
+157c157
+< 		ovm_memory_range r;
+---
+> 		uvm_memory_range r;
+179c179
+< 		ovm_memory_range r;
+---
+> 		uvm_memory_range r;
+200c200
+<     ovm_memory_range old_ranges[];
+---
+>     uvm_memory_range old_ranges[];
+diff -r ./src/ovm_memory_range.svh /tmp/Q8Mg5N9wNc/src/ovm_memory_range.svh
+26,27c26,27
+< // CLASS: ovm_memory_range
+< // A ovm_memory_range defines one block of memory with a range_start
+---
+> // CLASS: uvm_memory_range
+> // A uvm_memory_range defines one block of memory with a range_start
+30c30
+< // A range class (ovm_memory_range) has a range_start address and
+---
+> // A range class (uvm_memory_range) has a range_start address and
+47c47
+< class ovm_memory_range;
+---
+> class uvm_memory_range;
+diff -r ./src/ovm_memory.svh /tmp/Q8Mg5N9wNc/src/ovm_memory.svh
+21,22c21,22
+< // The three files ovm_memory.svh, ovm_memory_range.svh
+< // and ovm_memory_ranges.svh are meant to be used together,
+---
+> // The three files uvm_memory.svh, uvm_memory_range.svh
+> // and uvm_memory_ranges.svh are meant to be used together,
+24,25c24,25
+< `include "ovm_memory_range.svh"
+< `include "ovm_memory_ranges.svh"
+---
+> `include "uvm_memory_range.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+> `include "uvm_memory_ranges.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+27,28c27,28
+< // CLASS: ovm_memory
+< // ovm_memory is used to model memory, and have that
+---
+> // CLASS: uvm_memory
+> // uvm_memory is used to model memory, and have that
+35,36c35,36
+< // carefully. The model of memory supported by ovm_memory
+< // is as follows. ovm_memory "contains" a regular verilog
+---
+> // carefully. The model of memory supported by uvm_memory
+> // is as follows. uvm_memory "contains" a regular verilog
+56,57c56,57
+< class ovm_memory #(type T = int) 
+<   extends ovm_register#(T);
+---
+> class uvm_memory #(type T = int) 
+>   extends uvm_register#(T);
+69c69
+<   ovm_memory_ranges ranges;
+---
+>   uvm_memory_ranges ranges;
+80c80
+<       ovm_named_object p, 
+---
+>       uvm_named_object p, 
+135c135
+<       ovm_report_info("MEMORY",
+---
+>       uvm_report_info("MEMORY",
+147c147
+<   virtual function ovm_memory_range add_range(
+---
+>   virtual function uvm_memory_range add_range(
+155c155
+<   virtual function ovm_memory_range add_range_random_by_hand(
+---
+>   virtual function uvm_memory_range add_range_random_by_hand(
+159c159
+<       ovm_report_fatal("MEMORY", $psprintf(
+---
+>       uvm_report_fatal("MEMORY", $psprintf(
+255c255
+<         ovm_report_fatal("MEMORY", 
+---
+>         uvm_report_fatal("MEMORY", 
+358c358
+<       ovm_report_error("MEM", 
+---
+>       uvm_report_error("MEM", 
+362c362
+<       ovm_report_error("MEM", 
+---
+>       uvm_report_error("MEM", 
+diff -r ./src/ovm_modal_register.svh /tmp/Q8Mg5N9wNc/src/ovm_modal_register.svh
+20c20
+<   typedef string ovm_register_modes_t[string];
+---
+>   typedef string uvm_register_modes_t[string];
+23,24c23,24
+<   // CLASS: ovm_modal_register
+<   // This class is an ovm_register, which also has "modes".
+---
+>   // CLASS: uvm_modal_register
+>   // This class is an uvm_register, which also has "modes".
+30,31c30,31
+<   class ovm_modal_register #(type T = int ) extends ovm_register #(T); 
+<     function new(string name, ovm_named_object p);
+---
+>   class uvm_modal_register #(type T = int ) extends uvm_register #(T); 
+>     function new(string name, uvm_named_object p);
+35c35
+<     ovm_register_modes_t modes;
+---
+>     uvm_register_modes_t modes;
+49c49
+< 	  output ovm_register_modes_t modes);
+---
+> 	  output uvm_register_modes_t modes);
+67,68c67,68
+<   // CLASS: ovm_modal_register_derived
+<   // This is an ovm_register, which has modes and contains
+---
+>   // CLASS: uvm_modal_register_derived
+>   // This is an uvm_register, which has modes and contains
+70,71c70,71
+<   class ovm_modal_register_derived #(type T = int ) extends ovm_modal_register #(T); 
+<     ovm_register_base mode_registers[string];
+---
+>   class uvm_modal_register_derived #(type T = int ) extends uvm_modal_register #(T); 
+>     uvm_register_base mode_registers[string];
+73c73
+<     function new(string name, ovm_named_object p);
+---
+>     function new(string name, uvm_named_object p);
+92c92
+<     virtual function void add_mode_instance(string mode, ovm_register_base inst);
+---
+>     virtual function void add_mode_instance(string mode, uvm_register_base inst);
+diff -r ./src/ovm_named_object_registry.svh /tmp/Q8Mg5N9wNc/src/ovm_named_object_registry.svh
+1c1
+< // $Id: //dvt/vtech/dev/main/ovm/src/base/ovm_registry.svh#17 $
+---
+> // $Id: //dvt/vtech/dev/main/uvm/src/base/uvm_registry.svh#17 $
+23c23
+< // CLASS: ovm_named_object_registry #(T,Tname)
+---
+> // CLASS: uvm_named_object_registry #(T,Tname)
+25c25
+< // The ovm_named_object_registry serves as a lightweight proxy for a
+---
+> // The uvm_named_object_registry serves as a lightweight proxy for a
+28c28
+< // registration with the <ovm_factory>. Without it, registration would
+---
+> // registration with the <uvm_factory>. Without it, registration would
+31c31
+< // See Usage section below for information on using ovm_named_object_registry.
+---
+> // See Usage section below for information on using uvm_named_object_registry.
+36,38c36,38
+< class ovm_named_object_registry #(type T=ovm_named_object, string Tname="<unknown>")
+<                                            extends ovm_object_wrapper;
+<   typedef ovm_named_object_registry #(T,Tname) this_type;
+---
+> class uvm_named_object_registry #(type T=uvm_named_object, string Tname="<unknown>")
+>                                            extends uvm_object_wrapper;
+>   typedef uvm_named_object_registry #(T,Tname) this_type;
+44c44
+<   // This is an override of the method in <ovm_object_wrapper>. It is
+---
+>   // This is an override of the method in <uvm_object_wrapper>. It is
+48,49c48,49
+<   virtual function ovm_named_object 
+<     create_named_object (string name, ovm_named_object parent = null);
+---
+>   virtual function uvm_named_object 
+>     create_named_object (string name, uvm_named_object parent = null);
+57c57
+<   // <ovm_object>. This is an override of the method in <ovm_object_wrapper>.
+---
+>   // <uvm_object>. This is an override of the method in <uvm_object_wrapper>.
+62c62
+<   virtual function ovm_object create_object(string name="");
+---
+>   virtual function uvm_object create_object(string name="");
+71c71
+<   // overrides the method in <ovm_object_wrapper>.
+---
+>   // overrides the method in <uvm_object_wrapper>.
+87c87
+<       ovm_factory f = ovm_factory::get();
+---
+>       uvm_factory f = uvm_factory::get();
+103,104c103,104
+<   static function T create(string name, ovm_named_object parent, string contxt="");
+<     ovm_object obj;
+---
+>   static function T create(string name, uvm_named_object parent, string contxt="");
+>     uvm_object obj;
+106c106
+<     ovm_factory f = ovm_factory::get();
+---
+>     uvm_factory f = uvm_factory::get();
+120c120
+<       ovm_report_fatal("FCTTYP", msg);
+---
+>       uvm_report_fatal("FCTTYP", msg);
+143c143
+<   static function void set_type_override (ovm_object_wrapper override_type,
+---
+>   static function void set_type_override (uvm_object_wrapper override_type,
+164c164
+<   static function void set_inst_override(ovm_object_wrapper override_type,
+---
+>   static function void set_inst_override(uvm_object_wrapper override_type,
+166c166
+<                                          ovm_named_object parent=null);
+---
+>                                          uvm_named_object parent=null);
+diff -r ./src/ovm_named_object.sv /tmp/Q8Mg5N9wNc/src/ovm_named_object.sv
+1c1
+< // $Id: //dvt/vtech/dev/main/ovm/src/base/ovm_named_object.sv#80 $
+---
+> // $Id: //dvt/vtech/dev/main/uvm/src/base/uvm_named_object.sv#80 $
+23c23
+< // CLASS: ovm_named_object
+---
+> // CLASS: uvm_named_object
+25,27c25,27
+< // The ovm_named_object class is the root base class for OVM components. In
+< // addition to the features inherited from <ovm_object> and <ovm_report_object>,
+< // ovm_named_object provides the following interfaces:
+---
+> // The uvm_named_object class is the root base class for UVM components. In
+> // addition to the features inherited from <uvm_object> and <uvm_report_object>,
+> // uvm_named_object provides the following interfaces:
+38,39c38,39
+< //     are executed in precise order. Phasing is controlled by ovm_top, the
+< //     singleton instance of <ovm_root>.
+---
+> //     are executed in precise order. Phasing is controlled by uvm_top, the
+> //     singleton instance of <uvm_root>.
+41c41
+< // Reporting - provides a convenience interface to the <ovm_report_handler>. All
+---
+> // Reporting - provides a convenience interface to the <uvm_report_handler>. All
+48c48
+< // Factory - provides a convenience interface to the <ovm_factory>. The factory
+---
+> // Factory - provides a convenience interface to the <uvm_factory>. The factory
+52c52
+< // The ovm_named_object is automatically seeded during construction using OVM
+---
+> // The uvm_named_object is automatically seeded during construction using UVM
+54c54
+< // appropriate. See <ovm_object::reseed> for more information.
+---
+> // appropriate. See <uvm_object::reseed> for more information.
+58c58
+< virtual class ovm_named_object extends ovm_object;
+---
+> virtual class uvm_named_object extends uvm_object;
+70c70
+<   // implicit top-level component, ~ovm_top~.
+---
+>   // implicit top-level component, ~uvm_top~.
+72c72
+<   // All classes derived from ovm_named_object must call super.new(name,parent).
+---
+>   // All classes derived from uvm_named_object must call super.new(name,parent).
+74c74
+<   extern function     new (string name="", ovm_named_object parent=null);
+---
+>   extern function     new (string name="", uvm_named_object parent=null);
+98c98
+<   extern virtual function ovm_named_object get_parent ();
+---
+>   extern virtual function uvm_named_object get_parent ();
+105c105
+<   // with the leaf name of this object, as given by <ovm_object::get_name>. 
+---
+>   // with the leaf name of this object, as given by <uvm_object::get_name>. 
+111c111
+<   extern function ovm_named_object get_child (string name);
+---
+>   extern function uvm_named_object get_child (string name);
+120c120
+<   // following code calls <ovm_object::print> for each child:
+---
+>   // following code calls <uvm_object::print> for each child:
+123c123
+<   //|    ovm_named_object child;
+---
+>   //|    uvm_named_object child;
+155c155
+<     string name, ovm_named_object old_child);
+---
+>     string name, uvm_named_object old_child);
+166c166
+<   extern function ovm_named_object lookup (string name);
+---
+>   extern function uvm_named_object lookup (string name);
+173,174c173,174
+<   // The factory interface provides convenient access to a portion of OVM's
+<   // <ovm_factory> interface. For creating new objects and components, the
+---
+>   // The factory interface provides convenient access to a portion of UVM's
+>   // <uvm_factory> interface. For creating new objects and components, the
+176,177c176,177
+<   // wrapper (see <ovm_named_object_registry #(T,Tname)> and
+<   // <ovm_object_registry #(T,Tname)>). The wrapper also provides functions
+---
+>   // wrapper (see <uvm_named_object_registry #(T,Tname)> and
+>   // <uvm_object_registry #(T,Tname)>). The wrapper also provides functions
+185c185
+<   // A convenience function for <ovm_factory::create_object_by_name>,
+---
+>   // A convenience function for <uvm_factory::create_object_by_name>,
+196c196
+<   // <ovm_factory> for details on factory operation.
+---
+>   // <uvm_factory> for details on factory operation.
+198c198
+<   extern function ovm_object create_object (string requested_type_name,
+---
+>   extern function uvm_object create_object (string requested_type_name,
+204c204
+<   // A convenience function for <ovm_factory::set_type_override_by_type>, this
+---
+>   // A convenience function for <uvm_factory::set_type_override_by_type>, this
+212,213c212,213
+<   // In subsequent calls to <ovm_factory::create_object_by_type> or
+<   // <ovm_factory::create_named_object_by_type>, if the requested_type matches the
+---
+>   // In subsequent calls to <uvm_factory::create_object_by_type> or
+>   // <uvm_factory::create_named_object_by_type>, if the requested_type matches the
+222,223c222,223
+<                                              (ovm_object_wrapper original_type, 
+<                                               ovm_object_wrapper override_type,
+---
+>                                              (uvm_object_wrapper original_type, 
+>                                               uvm_object_wrapper override_type,
+229c229
+<   // A convenience function for <ovm_factory::set_inst_override_by_type>, this
+---
+>   // A convenience function for <uvm_factory::set_inst_override_by_type>, this
+241c241
+<   // In subsequent calls to <ovm_factory::ereate_object_by_type> or
+---
+>   // In subsequent calls to <uvm_factory::ereate_object_by_type> or
+243c243
+<   // <ovm_factory::create_named_object_by_type>, if the requested_type matches the
+---
+>   // <uvm_factory::create_named_object_by_type>, if the requested_type matches the
+251c251
+<   // <ovm_object_registry #(T,Tname)> or <ovm_named_object_registry #(T,Tname)>.
+---
+>   // <uvm_object_registry #(T,Tname)> or <uvm_named_object_registry #(T,Tname)>.
+253c253
+<   // If you are employing the `ovm_*_utils macros, the typedef and the get_type
+---
+>   // If you are employing the `uvm_*_utils macros, the typedef and the get_type
+256c256
+<   // The following example shows `ovm_*_utils usage:
+---
+>   // The following example shows `uvm_*_utils usage:
+258,259c258,259
+<   //|  class comp extends ovm_named_object;
+<   //|    `ovm_named_object_utils(comp)
+---
+>   //|  class comp extends uvm_named_object;
+>   //|    `uvm_named_object_utils(comp)
+263,264c263,264
+<   //|  class mycomp extends ovm_named_object;
+<   //|    `ovm_named_object_utils(mycomp)
+---
+>   //|  class mycomp extends uvm_named_object;
+>   //|    `uvm_named_object_utils(mycomp)
+268,269c268,269
+<   //|  class block extends ovm_named_object;
+<   //|    `ovm_named_object_utils(block)
+---
+>   //|  class block extends uvm_named_object;
+>   //|    `uvm_named_object_utils(block)
+279,280c279,280
+<                                                  ovm_object_wrapper original_type,
+<                                                  ovm_object_wrapper override_type);
+---
+>                                                  uvm_object_wrapper original_type,
+>                                                  uvm_object_wrapper override_type);
+285c285
+<   // A convenience function for <ovm_factory::set_type_override_by_name>,
+---
+>   // A convenience function for <uvm_factory::set_type_override_by_name>,
+306c306
+<   // A convenience function for <ovm_factory::set_inst_override_by_type>, this
+---
+>   // A convenience function for <uvm_factory::set_inst_override_by_type>, this
+361,364c361,364
+<   /*protected*/ ovm_named_object m_parent;
+<   bit print_enabled = 1; // Used in ovm_named_object_top. Normally always 1.
+<  ovm_named_object m_children[string]; // TODO: RICH was protected
+<   protected ovm_named_object m_children_by_handle[ovm_named_object];
+---
+>   /*protected*/ uvm_named_object m_parent;
+>   bit print_enabled = 1; // Used in uvm_named_object_top. Normally always 1.
+>  uvm_named_object m_children[string]; // TODO: RICH was protected
+>   protected uvm_named_object m_children_by_handle[uvm_named_object];
+366c366
+<   extern function bit m_add_child (ovm_named_object child, 
+---
+>   extern function bit m_add_child (uvm_named_object child, 
+368c368
+<   extern function bit m_move_child (ovm_named_object child);
+---
+>   extern function bit m_move_child (uvm_named_object child);
+375,376c375,376
+<   extern virtual function ovm_object create (string name=""); 
+<   extern virtual function ovm_object clone  ();
+---
+>   extern virtual function uvm_object create (string name=""); 
+>   extern virtual function uvm_object clone  ();
+384c384
+<   extern virtual function  void  post_new ();
+---
+>   extern virtual function  void  build();
+386c386
+<   extern static  function ovm_named_object find_component   (string comp_match);
+---
+>   extern static  function uvm_named_object find_component   (string comp_match);
+388,389c388,389
+<                                                     ref ovm_named_object comps[$]);
+<   extern static  function ovm_named_object get_component    (int ele);
+---
+>                                                     ref uvm_named_object comps[$]);
+>   extern static  function uvm_named_object get_component    (int ele);
+392c392
+< endclass : ovm_named_object
+---
+> endclass : uvm_named_object
+396,397c396,397
+< class ovm_named_object_root extends ovm_named_object;
+<   static local ovm_named_object_root m_inst;
+---
+> class uvm_named_object_root extends uvm_named_object;
+>   static local uvm_named_object_root m_inst;
+403c403
+<       ovm_root_report_handler rh = new();
+---
+>       uvm_root_report_handler rh = new();
+409c409
+<   static function ovm_named_object_root get();
+---
+>   static function uvm_named_object_root get();
+428,429c428,429
+<   function void find_all(string comp_match, ref ovm_named_object comps[$],
+<                                    input ovm_named_object comp=null); 
+---
+>   function void find_all(string comp_match, ref uvm_named_object comps[$],
+>                                    input uvm_named_object comp=null); 
+432c432
+<   static ovm_named_object tmp[$]; //static list to work around ius 6.2 limitation
+---
+>   static uvm_named_object tmp[$]; //static list to work around ius 6.2 limitation
+460,461c460,461
+<   if (ovm_is_match(comp_match, comp.get_full_name()) &&
+<        comp.get_name() != "") /* ovm_top */
+---
+>   if (uvm_is_match(comp_match, comp.get_full_name()) &&
+>        comp.get_name() != "") /* uvm_top */
+470c470
+< function ovm_named_object find (string comp_match);
+---
+> function uvm_named_object find (string comp_match);
+472c472
+<     static ovm_named_object comp_list[$];
+---
+>     static uvm_named_object comp_list[$];
+475c475
+<     ovm_named_object comp_list[$];
+---
+>     uvm_named_object comp_list[$];
+481c481
+<     ovm_top.ovm_report_warning("MMATCH",
+---
+>     uvm_top.uvm_report_warning("MMATCH",
+486c486
+<     ovm_top.ovm_report_warning("CMPNFD",
+---
+>     uvm_top.uvm_report_warning("CMPNFD",
+488c488
+<        "' was not found in the list of ovm_named_objects"});
+---
+>        "' was not found in the list of uvm_named_objects"});
+499c499
+< function void print_topology(ovm_printer printer=null);
+---
+> function void print_topology(uvm_printer printer=null);
+503c503
+<   ovm_top.ovm_report_info("OVMTOP", "OVM testbench topology:");
+---
+>   uvm_top.uvm_report_info("UVMTOP", "UVM testbench topology:");
+506c506
+<     ovm_top.ovm_report_warning("EMTCOMP", "print_topology - No OVM components to print.");
+---
+>     uvm_top.uvm_report_warning("EMTCOMP", "print_topology - No UVM components to print.");
+511c511
+<     printer = ovm_default_printer;
+---
+>     printer = uvm_default_printer;
+530,531c530,531
+< static ovm_named_object_root 
+<       ovm_named_object_top = ovm_named_object_root::get();
+---
+> static uvm_named_object_root 
+>       uvm_named_object_top = uvm_named_object_root::get();
+535c535
+< // CLASS- ovm_named_object
+---
+> // CLASS- uvm_named_object
+539c539
+< function string ovm_named_object::convert2string();
+---
+> function string uvm_named_object::convert2string();
+562c562
+< function void ovm_named_object::print_tree(int depth = 0);
+---
+> function void uvm_named_object::print_tree(int depth = 0);
+582,583c582,583
+< function ovm_named_object::new (
+<     string name="", ovm_named_object parent = null);
+---
+> function uvm_named_object::new (
+>     string name="", uvm_named_object parent = null);
+589c589
+<   // If ovm_named_object_top, reset name to "" so 
+---
+>   // If uvm_named_object_top, reset name to "" so 
+604c604
+<     m_parent = ovm_named_object_top;
+---
+>     m_parent = uvm_named_object_top;
+609c609
+<   ovm_top.ovm_report_info("NEWCOMP",
+---
+>   uvm_top.uvm_report_info("NEWCOMP",
+612c612
+<       m_parent.get_full_name(),name),OVM_MEDIUM+1);
+---
+>       m_parent.get_full_name(),name),UVM_MEDIUM+1);
+619c619
+<   //   (if use_ovm_seeding is set)
+---
+>   //   (if use_uvm_seeding is set)
+623,624c623,624
+< function bit ovm_named_object::m_move_child(
+<     ovm_named_object child);
+---
+> function bit uvm_named_object::m_move_child(
+>     uvm_named_object child);
+631,632c631,632
+< function bit ovm_named_object::m_add_child(
+<     ovm_named_object child,
+---
+> function bit uvm_named_object::m_add_child(
+>     uvm_named_object child,
+637c637
+<     ovm_top.ovm_report_fatal("EMPTYCHILD", 
+---
+>     uvm_top.uvm_report_fatal("EMPTYCHILD", 
+650c650
+<     ovm_top.ovm_report_fatal("THISPARENT", 
+---
+>     uvm_top.uvm_report_fatal("THISPARENT", 
+655c655
+<   if (this == ovm_named_object_top) begin
+---
+>   if (this == uvm_named_object_top) begin
+666c666
+<   else if (child.m_parent == ovm_named_object_top) begin
+---
+>   else if (child.m_parent == uvm_named_object_top) begin
+674c674
+<     ovm_report_fatal("ADDCHILD", 
+---
+>     uvm_report_fatal("ADDCHILD", 
+693c693
+<       ovm_top.ovm_report_warning("BDCLD",
+---
+>       uvm_top.uvm_report_warning("BDCLD",
+705c705
+<       ovm_top.ovm_report_warning("BDCHLD", $psprintf(
+---
+>       uvm_top.uvm_report_warning("BDCHLD", $psprintf(
+739c739
+< function int ovm_named_object::get_first_child(
+---
+> function int uvm_named_object::get_first_child(
+748c748
+< function int ovm_named_object::get_next_child(
+---
+> function int uvm_named_object::get_next_child(
+757c757
+< function ovm_named_object ovm_named_object::get_child(
+---
+> function uvm_named_object uvm_named_object::get_child(
+766c766
+< function int ovm_named_object::has_child(string name);
+---
+> function int uvm_named_object::has_child(string name);
+774c774
+< function int ovm_named_object::get_num_children();
+---
+> function int uvm_named_object::get_num_children();
+782c782
+< function string ovm_named_object::get_full_name ();
+---
+> function string uvm_named_object::get_full_name ();
+796c796
+< function ovm_named_object ovm_named_object::get_parent ();
+---
+> function uvm_named_object uvm_named_object::get_parent ();
+804c804
+< function void ovm_named_object::set_name (string name);
+---
+> function void uvm_named_object::set_name (string name);
+829,830c829,830
+< function void ovm_named_object::remove_child(
+<   string name, ovm_named_object old_child); // {
+---
+> function void uvm_named_object::remove_child(
+>   string name, uvm_named_object old_child); // {
+855c855
+<     ovm_named_object child = m_children[name];
+---
+>     uvm_named_object child = m_children[name];
+885,886c885,886
+< function void ovm_named_object::m_set_full_name();
+<   if (m_parent == ovm_named_object_top || m_parent==null)
+---
+> function void uvm_named_object::m_set_full_name();
+>   if (m_parent == uvm_named_object_top || m_parent==null)
+892c892
+<     ovm_named_object tmp;
+---
+>     uvm_named_object tmp;
+903c903
+< function ovm_named_object ovm_named_object::lookup( 
+---
+> function uvm_named_object uvm_named_object::lookup( 
+907c907
+<   ovm_named_object comp;
+---
+>   uvm_named_object comp;
+914c914
+<     comp = ovm_named_object_top; // absolute lookup
+---
+>     comp = uvm_named_object_top; // absolute lookup
+919c919
+<     ovm_top.ovm_report_warning("Lookup Error", 
+---
+>     uvm_top.uvm_report_warning("Lookup Error", 
+935c935
+< function void ovm_named_object::m_extract_name(
+---
+> function void uvm_named_object::m_extract_name(
+970c970
+< function ovm_object  ovm_named_object::create (
+---
+> function uvm_object  uvm_named_object::create (
+972,973c972,973
+<   ovm_top.ovm_report_error("ILLCRT",
+< "create cannot be called on a ovm_named_object. Use create_named_object instead.");
+---
+>   uvm_top.uvm_report_error("ILLCRT",
+> "create cannot be called on a uvm_named_object. Use create_named_object instead.");
+981,983c981,983
+< function ovm_object  ovm_named_object::clone ();
+<   ovm_top.ovm_report_error("ILLCLN",
+<     "clone cannot be called on a ovm_named_object. ");
+---
+> function uvm_object  uvm_named_object::clone ();
+>   uvm_top.uvm_report_error("ILLCLN",
+>     "clone cannot be called on a uvm_named_object. ");
+991c991
+< function void  ovm_named_object::print_override_info (
+---
+> function void  uvm_named_object::print_override_info (
+1002c1002
+< function ovm_object ovm_named_object::create_object (
+---
+> function uvm_object uvm_named_object::create_object (
+1013c1013
+< function void ovm_named_object::set_type_override (
+---
+> function void uvm_named_object::set_type_override (
+1026,1028c1026,1028
+< function void ovm_named_object::set_type_override_by_type (
+<   ovm_object_wrapper original_type,
+<   ovm_object_wrapper override_type,
+---
+> function void uvm_named_object::set_type_override_by_type (
+>   uvm_object_wrapper original_type,
+>   uvm_object_wrapper override_type,
+1038c1038
+< function void  ovm_named_object::set_inst_override (
+---
+> function void  uvm_named_object::set_inst_override (
+1060c1060
+< function void ovm_named_object::set_inst_override_by_type (
+---
+> function void uvm_named_object::set_inst_override_by_type (
+1062,1063c1062,1063
+<     ovm_object_wrapper original_type,
+<     ovm_object_wrapper override_type);
+---
+>     uvm_object_wrapper original_type,
+>     uvm_object_wrapper override_type);
+1087c1087
+< function void ovm_named_object::post_new();
+---
+> function void uvm_named_object::build();
+1095c1095
+< function ovm_named_object ovm_named_object::find_component (
+---
+> function uvm_named_object uvm_named_object::find_component (
+1100,1102c1100,1102
+<     ovm_top.ovm_report_warning("deprecated",
+< {"ovm_named_object::find_component() is deprecated and replaced by ",
+<       "ovm_named_object_top.find()"});
+---
+>     uvm_top.uvm_report_warning("deprecated",
+> {"uvm_named_object::find_component() is deprecated and replaced by ",
+>       "uvm_named_object_top.find()"});
+1104c1104
+<   return ovm_named_object_top.find(comp_match);
+---
+>   return uvm_named_object_top.find(comp_match);
+1112c1112
+< function void ovm_named_object::find_components (
+---
+> function void uvm_named_object::find_components (
+1114c1114
+<     ref ovm_named_object comps[$]);
+---
+>     ref uvm_named_object comps[$]);
+1118,1120c1118,1120
+<     ovm_top.ovm_report_warning("deprecated",
+< {"ovm_named_object::find_components() is deprecated and replaced by ",
+<       "ovm_named_object_top.find_all()"});
+---
+>     uvm_top.uvm_report_warning("deprecated",
+> {"uvm_named_object::find_components() is deprecated and replaced by ",
+>       "uvm_named_object_top.find_all()"});
+1122c1122
+<   ovm_named_object_top.find_all(comp_match,comps);
+---
+>   uvm_named_object_top.find_all(comp_match,comps);
+1129c1129
+< function ovm_named_object ovm_named_object::get_component (
+---
+> function uvm_named_object uvm_named_object::get_component (
+1131c1131
+<   ovm_named_object m__comps[$];
+---
+>   uvm_named_object m__comps[$];
+1135,1137c1135,1137
+<     ovm_top.ovm_report_warning("deprecated",
+< {"ovm_named_object::get_component() is an internal method that has been ",
+< "deprecated. ovm_named_object_top's find, find_all, and ovm_named_object's lookup ",
+---
+>     uvm_top.uvm_report_warning("deprecated",
+> {"uvm_named_object::get_component() is an internal method that has been ",
+> "deprecated. uvm_named_object_top's find, find_all, and uvm_named_object's lookup ",
+1141c1141
+<     //RICH ovm_named_object_top.find_all("*",m__comps);
+---
+>     //RICH uvm_named_object_top.find_all("*",m__comps);
+1151,1152c1151,1152
+< function int ovm_named_object::get_num_components ();
+<   ovm_named_object m__comps[$]; 
+---
+> function int uvm_named_object::get_num_components ();
+>   uvm_named_object m__comps[$]; 
+1156,1157c1156,1157
+<     ovm_top.ovm_report_warning("deprecated",
+< {"ovm_named_object::get_num_components() is an internal method that has ",
+---
+>     uvm_top.uvm_report_warning("deprecated",
+> {"uvm_named_object::get_num_components() is an internal method that has ",
+1159c1159
+< "obtained using the ovm_named_object_top.find_all() method."});
+---
+> "obtained using the uvm_named_object_top.find_all() method."});
+1163c1163
+<   ovm_named_object_top.find_all("*",m__comps);
+---
+>   uvm_named_object_top.find_all("*",m__comps);
+diff -r ./src/ovm_notification.svh /tmp/Q8Mg5N9wNc/src/ovm_notification.svh
+1c1
+< // $Id: //dvt/vtech/dev/main/ovm/src/base/ovm_named_object.sv#80 $
+---
+> // $Id: //dvt/vtech/dev/main/uvm/src/base/uvm_named_object.sv#80 $
+30c30
+< //    `OVM_REGISTER_NOTIFY(_x)
+---
+> //    `UVM_REGISTER_NOTIFY(_x)
+46,47c46,47
+< class ovm_analysis_imp_nc #(type T=int, type IMP=int)
+<   extends ovm_port_base #(tlm_if_base #(T,T));
+---
+> class uvm_analysis_imp_nc #(type T=int, type IMP=int)
+>   extends uvm_port_base #(uvm_tlm_if_base #(T,T));
+54c54
+<         ovm_report_fatal("IMP_NC", "IMP is null");
+---
+>         uvm_report_fatal("IMP_NC", "IMP is null");
+57c57
+<       super.new (long_name, null, OVM_IMPLEMENTATION, 1, 1);
+---
+>       super.new (long_name, null, UVM_IMPLEMENTATION, 1, 1);
+60c60
+<       //super.new (name, imp, OVM_IMPLEMENTATION, 1, 1);
+---
+>       //super.new (name, imp, UVM_IMPLEMENTATION, 1, 1);
+62c62
+<       super.new (name, null, OVM_IMPLEMENTATION, 1, 1);
+---
+>       super.new (name, null, UVM_IMPLEMENTATION, 1, 1);
+65c65
+<       m_if_mask = `TLM_ANALYSIS_MASK;
+---
+>       m_if_mask = `UVM_TLM_ANALYSIS_MASK;
+69c69
+<       return "ovm_analysis_imp";
+---
+>       return "uvm_analysis_imp";
+79,80c79,80
+< class ovm_analysis_imp #(type T=int, type IMP=int)
+<   extends ovm_port_base #(tlm_if_base #(T,T));
+---
+> class uvm_analysis_imp #(type T=int, type IMP=int)
+>   extends uvm_port_base #(uvm_tlm_if_base #(T,T));
+84c84
+<       super.new (name, imp, OVM_IMPLEMENTATION, 1, 1);
+---
+>       super.new (name, imp, UVM_IMPLEMENTATION, 1, 1);
+86c86
+<       m_if_mask = `TLM_ANALYSIS_MASK;
+---
+>       m_if_mask = `UVM_TLM_ANALYSIS_MASK;
+90c90
+<       return "ovm_analysis_imp";
+---
+>       return "uvm_analysis_imp";
+diff -r ./src/ovm_register_agent_pkg.svh /tmp/Q8Mg5N9wNc/src/ovm_register_agent_pkg.svh
+20c20
+< typedef class ovm_register_transaction;
+---
+> typedef class uvm_register_transaction;
+22c22
+< // TITLE: OVM Register Agent
+---
+> // TITLE: UVM Register Agent
+24c24
+< // and sqeuencers for the OVM Register Package.
+---
+> // and sqeuencers for the UVM Register Package.
+26c26
+< // CLASS: ovm_register_driver
+---
+> // CLASS: uvm_register_driver
+34c34
+< // with an ovm_sequencer to get requests and send responses,
+---
+> // with an uvm_sequencer to get requests and send responses,
+38,41c38,41
+< class ovm_register_driver 
+<     #(type REQ = ovm_register_transaction,
+<       type RSP = ovm_register_transaction)
+<   extends ovm_driver #(REQ, RSP);
+---
+> class uvm_register_driver 
+>     #(type REQ = uvm_register_transaction,
+>       type RSP = uvm_register_transaction)
+>   extends uvm_driver #(REQ, RSP);
+43c43
+<   `ovm_component_param_utils(ovm_register_driver#(REQ, RSP))
+---
+>   `uvm_component_param_utils(uvm_register_driver#(REQ, RSP))
+49,50c49,50
+<   // are 'ovm_register_transactions'.
+<   ovm_transport_port #(REQ, RSP) transport_port;
+---
+>   // are 'uvm_register_transactions'.
+>   uvm_transport_port #(REQ, RSP) transport_port;
+54c54
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+60c60
+<   // This is a standard ovm_driver, and uses get()
+---
+>   // This is a standard uvm_driver, and uses get()
+63c63
+<     ovm_report_info("Register Driver", 
+---
+>     uvm_report_info("Register Driver", 
+70c70
+<       ovm_report_info("Register Driver", 
+---
+>       uvm_report_info("Register Driver", 
+76c76
+<       ovm_report_info("Register Driver", 
+---
+>       uvm_report_info("Register Driver", 
+86c86
+< // CLASS: ovm_register_sequencer
+---
+> // CLASS: uvm_register_sequencer
+88c88
+< // A sequencer to use with an ovm_register_driver.
+---
+> // A sequencer to use with an uvm_register_driver.
+91,92c91,92
+< // convenient to host the register map in an ovm_component
+< // based system, than an ovm_transaction based system).
+---
+> // convenient to host the register map in an uvm_component
+> // based system, than an uvm_transaction based system).
+94,97c94,97
+< class ovm_register_sequencer
+<     #(type REQ = ovm_register_transaction,
+<       type RSP = ovm_register_transaction)
+<   extends ovm_sequencer #(REQ, RSP);
+---
+> class uvm_register_sequencer
+>     #(type REQ = uvm_register_transaction,
+>       type RSP = uvm_register_transaction)
+>   extends uvm_sequencer #(REQ, RSP);
+99,100c99,100
+<   `ovm_sequencer_param_utils(
+<     ovm_register_sequencer#(REQ, RSP))
+---
+>   `uvm_sequencer_param_utils(
+>     uvm_register_sequencer#(REQ, RSP))
+105c105
+<   ovm_register_map register_map;
+---
+>   uvm_register_map register_map;
+109c109
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+111,112c111,112
+<     `ovm_update_sequence_lib_and_item(
+<       ovm_register_transaction)
+---
+>     `uvm_update_sequence_lib_and_item(
+>       uvm_register_transaction)
+124c124
+<       ovm_register_map::ovm_register_get_register_map(,this);
+---
+>       uvm_register_map::uvm_register_get_register_map(,this);
+128c128
+< // CLASS: ovm_register_bus_monitor
+---
+> // CLASS: uvm_register_bus_monitor
+137,138c137,138
+< class ovm_register_bus_monitor #(type T = bus_transaction)
+<   extends ovm_subscriber#(T);
+---
+> class uvm_register_bus_monitor #(type T = bus_transaction)
+>   extends uvm_subscriber#(T);
+140c140
+<   `ovm_component_param_utils(ovm_register_bus_monitor#(T))
+---
+>   `uvm_component_param_utils(uvm_register_bus_monitor#(T))
+144c144
+<   ovm_analysis_port #(ovm_register_transaction) ap;
+---
+>   uvm_analysis_port #(uvm_register_transaction) ap;
+148c148
+<   ovm_register_map register_map;
+---
+>   uvm_register_map register_map;
+153c153
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+165c165
+<       ovm_register_map::ovm_register_get_register_map(,this);
+---
+>       uvm_register_map::uvm_register_get_register_map(,this);
+179c179
+<     ovm_register_transaction register_transaction = new();
+---
+>     uvm_register_transaction register_transaction = new();
+184c184
+<     ovm_register_base r;
+---
+>     uvm_register_base r;
+186c186
+<     ovm_report_info("Register Bus Monitor", 
+---
+>     uvm_report_info("Register Bus Monitor", 
+202c202
+<     ovm_report_info("Register Bus Monitor", 
+---
+>     uvm_report_info("Register Bus Monitor", 
+211c211
+< // CLASS: ovm_register_bus_driver
+---
+> // CLASS: uvm_register_bus_driver
+224,227c224,227
+< class ovm_register_bus_driver 
+<     #(type REQ = ovm_register_transaction,
+<       type RSP = ovm_register_transaction)
+<   extends ovm_component;
+---
+> class uvm_register_bus_driver 
+>     #(type REQ = uvm_register_transaction,
+>       type RSP = uvm_register_transaction)
+>   extends uvm_component;
+229,230c229,230
+<   `ovm_component_param_utils(
+<     ovm_register_bus_driver#(REQ, RSP))
+---
+>   `uvm_component_param_utils(
+>     uvm_register_bus_driver#(REQ, RSP))
+234c234
+<   tlm_transport_channel #(REQ, RSP) channel;
+---
+>   uvm_tlm_transport_channel #(REQ, RSP) channel;
+239c239
+<   ovm_transport_export  #(REQ, RSP) transport_export;
+---
+>   uvm_transport_export  #(REQ, RSP) transport_export;
+246c246
+<   ovm_transport_port  #(bus_request, bus_response) 
+---
+>   uvm_transport_port  #(bus_request, bus_response) 
+251c251
+<   ovm_register_map register_map;
+---
+>   uvm_register_map register_map;
+256c256
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+277c277
+<       ovm_register_map::ovm_register_get_register_map(,this);
+---
+>       uvm_register_map::uvm_register_get_register_map(,this);
+288c288
+<     ovm_register_base r;
+---
+>     uvm_register_base r;
+296c296
+<     ovm_report_info("Register Bus Driver", 
+---
+>     uvm_report_info("Register Bus Driver", 
+308c308
+<       ovm_report_info("Register Bus Driver", 
+---
+>       uvm_report_info("Register Bus Driver", 
+320c320
+<         ovm_report_error("Register Bus Driver", 
+---
+>         uvm_report_error("Register Bus Driver", 
+327c327
+<       ovm_report_info("Register Bus Driver", 
+---
+>       uvm_report_info("Register Bus Driver", 
+335c335
+<       ovm_report_info("Register Bus Driver", 
+---
+>       uvm_report_info("Register Bus Driver", 
+352c352
+<       ovm_report_info("Register Bus Driver", 
+---
+>       uvm_report_info("Register Bus Driver", 
+363c363
+< // CLASS: ovm_register_monitor
+---
+> // CLASS: uvm_register_monitor
+368,369c368,369
+< class ovm_register_monitor #(type T = int)
+<   extends ovm_subscriber#(T);
+---
+> class uvm_register_monitor #(type T = int)
+>   extends uvm_subscriber#(T);
+371c371
+<   `ovm_component_param_utils(ovm_register_monitor#(T))
+---
+>   `uvm_component_param_utils(uvm_register_monitor#(T))
+375c375
+<   ovm_register_map register_map;
+---
+>   uvm_register_map register_map;
+379c379
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+389c389
+<       ovm_register_map::ovm_register_get_register_map(,this);
+---
+>       uvm_register_map::uvm_register_get_register_map(,this);
+396c396
+<   // Note - Usually T is ovm_register_transaction.
+---
+>   // Note - Usually T is uvm_register_transaction.
+398c398
+<     ovm_register_base r;
+---
+>     uvm_register_base r;
+400c400
+<     ovm_report_info("Register Scoreboard", 
+---
+>     uvm_report_info("Register Scoreboard", 
+408c408
+<              ovm_report_info("Register Scoreboard",
+---
+>              uvm_report_info("Register Scoreboard",
+413c413
+<              ovm_report_info("Register Scoreboard",
+---
+>              uvm_report_info("Register Scoreboard",
+419c419
+<         ovm_report_error("register_monitor", 
+---
+>         uvm_report_error("register_monitor", 
+diff -r ./src/ovm_register_auto_test.svh /tmp/Q8Mg5N9wNc/src/ovm_register_auto_test.svh
+20c20
+< // TITLE: OVM Register Auto Test
+---
+> // TITLE: UVM Register Auto Test
+24c24
+< // CLASS: ovm_register_auto_test
+---
+> // CLASS: uvm_register_auto_test
+28,31c28,31
+< virtual class ovm_register_auto_test
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+<   extends ovm_component; 
+---
+> virtual class uvm_register_auto_test
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+>   extends uvm_component; 
+33c33
+<   //XXX_RICH `ovm_component_param_utils(ovm_register_auto_test#(REQ, RSP))
+---
+>   //XXX_RICH `uvm_component_param_utils(uvm_register_auto_test#(REQ, RSP))
+37c37
+<   tlm_transport_channel #(REQ, RSP) channel;
+---
+>   uvm_tlm_transport_channel #(REQ, RSP) channel;
+41c41
+<   ovm_transport_export  #(REQ, RSP) transport_export;
+---
+>   uvm_transport_export  #(REQ, RSP) transport_export;
+46c46
+<   ovm_analysis_port #(RSP) ap;
+---
+>   uvm_analysis_port #(RSP) ap;
+48c48
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+diff -r ./src/ovm_register_dpi.c /tmp/Q8Mg5N9wNc/src/ovm_register_dpi.c
+27c27
+<  * TITLE: OVM Register Backdoor C code.
+---
+>  * TITLE: UVM Register Backdoor C code.
+30c30
+<  * OVM register library. It is used by the OVM register
+---
+>  * UVM register library. It is used by the UVM register
+40c40
+<  * FUNCTION: ovm_register_get_max_size()
+---
+>  * FUNCTION: uvm_register_get_max_size()
+52c52
+< static int ovm_register_get_max_size()
+---
+> static int uvm_register_get_max_size()
+56c56
+<   ms = vpi_handle_by_name("ovm_register_pkg::OVM_REGISTER_MAX_WIDTH", 0);
+---
+>   ms = vpi_handle_by_name("uvm_register_pkg::UVM_REGISTER_MAX_WIDTH", 0);
+60c60
+<   vpi_printf("OVM_Register DPI-C : Lookup of 'ovm_register_pkg::OVM_REGISTER_MAX_WIDTH' successful. ");
+---
+>   vpi_printf("UVM_Register DPI-C : Lookup of 'uvm_register_pkg::UVM_REGISTER_MAX_WIDTH' successful. ");
+66c66
+<  * FUNCTION: ovm_register_check_hdl
+---
+>  * FUNCTION: uvm_register_check_hdl
+74c74
+< int ovm_register_check_hdl(char *path)
+---
+> int uvm_register_check_hdl(char *path)
+85c85
+<  * FUNCTION: ovm_register_set_hdl
+---
+>  * FUNCTION: uvm_register_set_hdl
+90c90
+< void ovm_register_set_hdl(char *path, p_vpi_vecval value)
+---
+> void uvm_register_set_hdl(char *path, p_vpi_vecval value)
+101c101
+<     vpi_printf("FATAL ovm_register : unable to locate hdl path (%s)\n", path);
+---
+>     vpi_printf("FATAL uvm_register : unable to locate hdl path (%s)\n", path);
+110c110
+<         maxsize = ovm_register_get_max_size();
+---
+>         maxsize = uvm_register_get_max_size();
+117c117
+<       vpi_printf("FATAL ovm_register : hdl path '%s' is %0d bits,\n", path, size);
+---
+>       vpi_printf("FATAL uvm_register : hdl path '%s' is %0d bits,\n", path, size);
+119c119
+<       vpi_printf(" flag. i.e. %s\n", "vlog ... +define+OVM_REGISTER_MAX_WIDTH=<value>");
+---
+>       vpi_printf(" flag. i.e. %s\n", "vlog ... +define+UVM_REGISTER_MAX_WIDTH=<value>");
+150c150
+<  * FUNCTION: ovm_register_set_hdl
+---
+>  * FUNCTION: uvm_register_set_hdl
+155c155
+< void ovm_register_get_hdl(char *path, p_vpi_vecval value)
+---
+> void uvm_register_get_hdl(char *path, p_vpi_vecval value)
+164c164
+<     vpi_printf("FATAL ovm_register : unable to locate hdl path %s\n", path);
+---
+>     vpi_printf("FATAL uvm_register : unable to locate hdl path %s\n", path);
+173c173
+<         maxsize = ovm_register_get_max_size();
+---
+>         maxsize = uvm_register_get_max_size();
+178c178
+<       vpi_printf("FATAL ovm_register : hdl path '%s' is %0d bits,\n", path, size);
+---
+>       vpi_printf("FATAL uvm_register : hdl path '%s' is %0d bits,\n", path, size);
+180c180
+<       vpi_printf(" flag. i.e. %s\n", "vlog ... +define+OVM_REGISTER_MAX_WIDTH=<value>");
+---
+>       vpi_printf(" flag. i.e. %s\n", "vlog ... +define+UVM_REGISTER_MAX_WIDTH=<value>");
+diff -r ./src/ovm_register_dpi.svh /tmp/Q8Mg5N9wNc/src/ovm_register_dpi.svh
+20c20
+< // TITLE: OVM Register Backdoor SystemVerilog support routines.
+---
+> // TITLE: UVM Register Backdoor SystemVerilog support routines.
+53c53
+<  * VARIABLE: OVM_REGISTER_MAX_WIDTH
+---
+>  * VARIABLE: UVM_REGISTER_MAX_WIDTH
+57c57
+<  *     "ovm_register_pkg::OVM_REGISTER_MAX_WIDTH", 0);
+---
+>  *     "uvm_register_pkg::UVM_REGISTER_MAX_WIDTH", 0);
+59c59
+< parameter int OVM_REGISTER_MAX_WIDTH = `OVM_REGISTER_MAX_WIDTH;
+---
+> parameter int UVM_REGISTER_MAX_WIDTH = `UVM_REGISTER_MAX_WIDTH;
+72c72
+<   //   ../../../src/ovm_register_dpi.c \
+---
+>   //   ../../../src/uvm_register_dpi.c \
+77c77
+<   // Function: ovm_register_check_hdl()
+---
+>   // Function: uvm_register_check_hdl()
+81c81
+<   import "DPI-C" function int ovm_register_check_hdl(string path);
+---
+>   import "DPI-C" function int uvm_register_check_hdl(string path);
+84c84
+<   // Function: ovm_register_set_hdl()
+---
+>   // Function: uvm_register_set_hdl()
+88,89c88,89
+<   import "DPI-C" function void ovm_register_set_hdl(
+<     string path, logic[`OVM_REGISTER_MAX_WIDTH-1:0] value);
+---
+>   import "DPI-C" function void uvm_register_set_hdl(
+>     string path, logic[`UVM_REGISTER_MAX_WIDTH-1:0] value);
+92c92
+<   // Function: ovm_register_get_hdl()
+---
+>   // Function: uvm_register_get_hdl()
+96,97c96,97
+<   import "DPI-C" function void ovm_register_get_hdl(
+<     string path, output logic[`OVM_REGISTER_MAX_WIDTH-1:0] value);
+---
+>   import "DPI-C" function void uvm_register_get_hdl(
+>     string path, output logic[`UVM_REGISTER_MAX_WIDTH-1:0] value);
+100c100
+<   function int ovm_register_check_hdl( string path);
+---
+>   function int uvm_register_check_hdl( string path);
+102c102
+<     ovm_report_fatal("OVM_REGISTER_SET_HDL", 
+---
+>     uvm_report_fatal("UVM_REGISTER_SET_HDL", 
+107,108c107,108
+<   function void ovm_register_set_hdl( 
+<     string path, logic[`OVM_REGISTER_MAX_WIDTH-1:0] value);
+---
+>   function void uvm_register_set_hdl( 
+>     string path, logic[`UVM_REGISTER_MAX_WIDTH-1:0] value);
+110c110
+<     ovm_report_fatal("OVM_REGISTER_SET_HDL", 
+---
+>     uvm_report_fatal("UVM_REGISTER_SET_HDL", 
+114,115c114,115
+<   function void ovm_register_get_hdl( 
+<     string path, output logic[`OVM_REGISTER_MAX_WIDTH-1:0] value);
+---
+>   function void uvm_register_get_hdl( 
+>     string path, output logic[`UVM_REGISTER_MAX_WIDTH-1:0] value);
+117c117
+<     ovm_report_error("OVM_REGISTER_GET_HDL", 
+---
+>     uvm_report_error("UVM_REGISTER_GET_HDL", 
+diff -r ./src/ovm_register_env_pkg.svh /tmp/Q8Mg5N9wNc/src/ovm_register_env_pkg.svh
+20c20
+< // TITLE: OVM Register Environment
+---
+> // TITLE: UVM Register Environment
+24c24
+< // CLASS: ovm_register_env
+---
+> // CLASS: uvm_register_env
+35,36c35,36
+< class ovm_register_env 
+<   extends ovm_env;
+---
+> class uvm_register_env 
+>   extends uvm_env;
+38c38
+<   `ovm_component_utils(ovm_register_env)
+---
+>   `uvm_component_utils(uvm_register_env)
+45c45
+<   ovm_transport_port  
+---
+>   uvm_transport_port  
+51c51
+<   // back here to be processed by the ovm_register_monitor
+---
+>   // back here to be processed by the uvm_register_monitor
+53,54c53,54
+<   ovm_analysis_export   
+<     #(ovm_register_transaction) bus_rsp_analysis_export;
+---
+>   uvm_analysis_export   
+>     #(uvm_register_transaction) bus_rsp_analysis_export;
+58,60c58,60
+<   ovm_register_sequencer 
+<     #(ovm_register_transaction, 
+<       ovm_register_transaction) m_sequencer;
+---
+>   uvm_register_sequencer 
+>     #(uvm_register_transaction, 
+>       uvm_register_transaction) m_sequencer;
+64,66c64,66
+<   ovm_register_driver    
+<     #(ovm_register_transaction, 
+<       ovm_register_transaction) m_driver;
+---
+>   uvm_register_driver    
+>     #(uvm_register_transaction, 
+>       uvm_register_transaction) m_driver;
+70,72c70,72
+<   ovm_register_bus_driver    
+<     #(ovm_register_transaction, 
+<       ovm_register_transaction) m_bus_driver;
+---
+>   uvm_register_bus_driver    
+>     #(uvm_register_transaction, 
+>       uvm_register_transaction) m_bus_driver;
+77,78c77,78
+<   ovm_register_monitor 
+<     #(ovm_register_transaction) m_register_monitor;
+---
+>   uvm_register_monitor 
+>     #(uvm_register_transaction) m_register_monitor;
+84c84
+<   ovm_register_map               m_register_map;
+---
+>   uvm_register_map               m_register_map;
+88c88
+<   function new(string name, ovm_component parent = null);
+---
+>   function new(string name, uvm_component parent = null);
+110c110
+<         "ovm_exhaustive_sequence");
+---
+>         "uvm_exhaustive_sequence");
+118c118
+<       ovm_register_map::ovm_register_get_register_map();
+---
+>       uvm_register_map::uvm_register_get_register_map();
+129c129
+<         ovm_report_info("Register Env", 
+---
+>         uvm_report_info("Register Env", 
+133c133
+<       ovm_report_info("Register Env", 
+---
+>       uvm_report_info("Register Env", 
+172,174c172,174
+<     ovm_register_sequence_base
+<       #(ovm_register_transaction, 
+<         ovm_register_transaction) m_sequence;
+---
+>     uvm_register_sequence_base
+>       #(uvm_register_transaction, 
+>         uvm_register_transaction) m_sequence;
+179c179
+<     ovm_report_info("Register Env", "Starting...");
+---
+>     uvm_report_info("Register Env", "Starting...");
+182c182
+< 	// depending on which OVM, so don't use under
+---
+> 	// depending on which UVM, so don't use under
+192c192
+<       #(ovm_register_transaction, ovm_register_transaction)::
+---
+>       #(uvm_register_transaction, uvm_register_transaction)::
+204,205c204,205
+<       //     #(ovm_register_transaction, 
+<       //       ovm_register_transaction) dummy;
+---
+>       //     #(uvm_register_transaction, 
+>       //       uvm_register_transaction) dummy;
+209c209
+<         ovm_report_error("Register Env", 
+---
+>         uvm_report_error("Register Env", 
+214c214
+<         ovm_report_info("Register Env",
+---
+>         uvm_report_info("Register Env",
+219c219
+<       ovm_report_info("Register Env", 
+---
+>       uvm_report_info("Register Env", 
+223c223
+<       // $cast(m_sequence, ovm_factory::create_object( 
+---
+>       // $cast(m_sequence, uvm_factory::create_object( 
+227c227
+<       // m_sequence = ovm_factory::create_object(
+---
+>       // m_sequence = uvm_factory::create_object(
+238c238
+<       ovm_report_fatal("Register Env", 
+---
+>       uvm_report_fatal("Register Env", 
+243c243
+<       ovm_report_info("Register Env", 
+---
+>       uvm_report_info("Register Env", 
+diff -r ./src/ovm_register_macros.svh /tmp/Q8Mg5N9wNc/src/ovm_register_macros.svh
+20c20
+< // TITLE: OVM Register Macros 
+---
+> // TITLE: UVM Register Macros 
+22,23c22,23
+< // These macros (ovm_register_begin_fields, 
+< // ovm_register_field, ovm_register_end_fields) 
+---
+> // These macros (uvm_register_begin_fields, 
+> // uvm_register_field, uvm_register_end_fields) 
+26,30c26,30
+< //|  `ovm_register_begin_fields(TYPE)
+< //|    `ovm_register_field(field_name1)
+< //|    `ovm_register_field(field_name2)
+< //|    `ovm_register_field(field_name3)
+< //|  `ovm_register_end_fields
+---
+> //|  `uvm_register_begin_fields(TYPE)
+> //|    `uvm_register_field(field_name1)
+> //|    `uvm_register_field(field_name2)
+> //|    `uvm_register_field(field_name3)
+> //|  `uvm_register_end_fields
+33c33
+< // MACRO: `ovm_register_begin_fields
+---
+> // MACRO: `uvm_register_begin_fields
+35c35
+< // `ovm_register_begin_fields is used to start the
+---
+> // `uvm_register_begin_fields is used to start the
+38c38
+< // MACRO: `ovm_register_end_fields
+---
+> // MACRO: `uvm_register_end_fields
+40c40
+< // `ovm_register_end_fields is used to end the 
+---
+> // `uvm_register_end_fields is used to end the 
+43c43
+< // MACRO: `ovm_register_field(FIELD_NAME)
+---
+> // MACRO: `uvm_register_field(FIELD_NAME)
+47,49c47,49
+< // | `ovm_register_field(f1)
+< // | `ovm_register_field(f2)
+< // | `ovm_register_field(f3)
+---
+> // | `uvm_register_field(f1)
+> // | `uvm_register_field(f2)
+> // | `uvm_register_field(f3)
+55c55
+< `define ovm_register_begin_fields \
+---
+> `define uvm_register_begin_fields \
+58c58
+< OVM_REGISTER_FIELD_ACCESS_T cmd, \
+---
+> UVM_REGISTER_FIELD_ACCESS_T cmd, \
+63c63
+< `define ovm_register_field(FIELD_NAME) \
+---
+> `define uvm_register_field(FIELD_NAME) \
+66c66
+<   OVM_REGISTER_FIELD_SET_BY_NAME: begin \
+---
+>   UVM_REGISTER_FIELD_SET_BY_NAME: begin \
+70c70
+<           OVM_REGISTER_FIELD_GET_BY_NAME: begin \
+---
+>           UVM_REGISTER_FIELD_GET_BY_NAME: begin \
+74c74
+<             ovm_report_error("m_register_field_by_name", \
+---
+>             uvm_report_error("m_register_field_by_name", \
+79c79
+< `define ovm_register_no_field(FIELD_NAME) \
+---
+> `define uvm_register_no_field(FIELD_NAME) \
+82c82
+<   OVM_REGISTER_FIELD_SET_BY_NAME: begin \
+---
+>   UVM_REGISTER_FIELD_SET_BY_NAME: begin \
+86c86
+<           OVM_REGISTER_FIELD_GET_BY_NAME: begin \
+---
+>           UVM_REGISTER_FIELD_GET_BY_NAME: begin \
+90c90
+<             ovm_report_error("m_register_field_by_name", \
+---
+>             uvm_report_error("m_register_field_by_name", \
+95c95
+< `define ovm_register_enum_field(FIELD_NAME, TYPE_NAME) \
+---
+> `define uvm_register_enum_field(FIELD_NAME, TYPE_NAME) \
+98c98
+<   OVM_REGISTER_FIELD_SET_BY_NAME: begin \
+---
+>   UVM_REGISTER_FIELD_SET_BY_NAME: begin \
+102c102
+<           OVM_REGISTER_FIELD_GET_BY_NAME: begin \
+---
+>           UVM_REGISTER_FIELD_GET_BY_NAME: begin \
+106c106
+<             ovm_report_error("m_register_field_by_name", \
+---
+>             uvm_report_error("m_register_field_by_name", \
+111c111
+< `define ovm_register_end_fields \
+---
+> `define uvm_register_end_fields \
+114c114
+<     ovm_report_error("m_register_field_by_name",  \
+---
+>     uvm_report_error("m_register_field_by_name",  \
+125,126c125,126
+< `define xxxx_OVM_REGISTER_NOTIFY(SFX) \
+<   class ovm_register_notify``SFX \
+---
+> `define xxxx_UVM_REGISTER_NOTIFY(SFX) \
+>   class uvm_register_notify``SFX \
+128c128
+<       extends ovm_port_base #(tlm_if_base#(T,T)); \
+---
+>       extends uvm_port_base #(uvm_tlm_if_base#(T,T)); \
+132,133c132,133
+<       super.new(name, null, OVM_IMPLEMENTATION, 1, 1); \
+<       m_if_mask = `TLM_ANALYSIS_MASK; \
+---
+>       super.new(name, null, UVM_IMPLEMENTATION, 1, 1); \
+>       m_if_mask = `UVM_TLM_ANALYSIS_MASK; \
+141,142c141,142
+< `define OVM_REGISTER_NOTIFY(SFX) \
+<   class ovm_register_notify``SFX \
+---
+> `define UVM_REGISTER_NOTIFY(SFX) \
+>   class uvm_register_notify``SFX \
+144c144
+<       extends ovm_analysis_imp_nc #(T, IMP); \
+---
+>       extends uvm_analysis_imp_nc #(T, IMP); \
+154c154
+<     ovm_register_notify``SFX \
+---
+>     uvm_register_notify``SFX \
+158,159c158,159
+<     ovm_register_notify``SFX \
+<       #(ovm_register_base, IMP) analysis_export``SFX;
+---
+>     uvm_register_notify``SFX \
+>       #(uvm_register_base, IMP) analysis_export``SFX;
+161,162c161,162
+< `define ovm_named_object_registry(T,S) \
+<    typedef ovm_named_object_registry #(T,S) type_id; \
+---
+> `define uvm_named_object_registry(T,S) \
+>    typedef uvm_named_object_registry #(T,S) type_id; \
+167,168c167,168
+< `define ovm_named_object_registry_internal(T,S) \
+<    typedef ovm_named_object_registry #(T,`"S`") type_id; \
+---
+> `define uvm_named_object_registry_internal(T,S) \
+>    typedef uvm_named_object_registry #(T,`"S`") type_id; \
+173,183c173,183
+< `define ovm_named_object_utils(T) \
+<   `ovm_named_object_utils_begin(T) \
+<   `ovm_named_object_utils_end
+< 
+< `define ovm_named_object_param_utils(T) \
+<   `ovm_named_object_param_utils_begin(T) \
+<   `ovm_named_object_utils_end
+< 
+< `define ovm_named_object_utils_begin(T) \
+<    `ovm_named_object_registry_internal(T,T) \
+<    `ovm_get_type_name_func(T) \
+---
+> `define uvm_named_object_utils(T) \
+>   `uvm_named_object_utils_begin(T) \
+>   `uvm_named_object_utils_end
+> 
+> `define uvm_named_object_param_utils(T) \
+>   `uvm_named_object_param_utils_begin(T) \
+>   `uvm_named_object_utils_end
+> 
+> `define uvm_named_object_utils_begin(T) \
+>    `uvm_named_object_registry_internal(T,T) \
+>    `uvm_get_type_name_func(T) \
+185,186c185,186
+< `define ovm_named_object_param_utils_begin(T) \
+<    `ovm_named_object_registry_param(T) \
+---
+> `define uvm_named_object_param_utils_begin(T) \
+>    `uvm_named_object_registry_param(T) \
+188c188
+< `define ovm_named_object_utils_end \
+---
+> `define uvm_named_object_utils_end \
+diff -r ./src/ovm_register_misc.svh /tmp/Q8Mg5N9wNc/src/ovm_register_misc.svh
+20c20
+< // TITLE: OVM Register Miscellaneous 
+---
+> // TITLE: UVM Register Miscellaneous 
+24c24
+< function string ovm_print_name_list(
+---
+> function string uvm_print_name_list(
+37c37
+<   ovm_parse_path_name(output name_list_t l, input string path_name);
+---
+>   uvm_parse_path_name(output name_list_t l, input string path_name);
+55c55
+< 	ovm_report_error("PARSENAME", 
+---
+> 	uvm_report_error("PARSENAME", 
+diff -r ./src/ovm_register_pkg.sv /tmp/Q8Mg5N9wNc/src/ovm_register_pkg.sv
+20c20
+< // OVM Register Package
+---
+> // UVM Register Package
+61c61
+< package ovm_register_pkg;
+---
+> package uvm_register_pkg;
+63,64c63,64
+< `ifndef OVM_REGISTER_MAX_WIDTH
+< `define OVM_REGISTER_MAX_WIDTH 1024
+---
+> `ifndef UVM_REGISTER_MAX_WIDTH
+> `define UVM_REGISTER_MAX_WIDTH 1024
+67,68c67,68
+<   import ovm_pkg::*;
+<   `include "ovm_macros.svh"
+---
+>   import uvm_pkg::*;
+>   `include "uvm_macros.svh"
+70c70
+<   `include "ovm_register_dpi.svh"
+---
+>   `include "uvm_register_dpi.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+72,73c72,73
+<   `include "ovm_named_object.sv"
+<   `include "ovm_named_object_registry.svh"
+---
+>   `include "uvm_named_object.sv"
+>   `include "uvm_named_object_registry.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+75c75
+<   `include "ovm_notification.svh"
+---
+>   `include "uvm_notification.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+77,79c77,79
+<   `include "ovm_register_version.svh"
+<   `include "ovm_register_misc.svh"
+<   `include "ovm_register.svh"
+---
+>   `include "uvm_register_version.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_misc.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+82,87c82,87
+< `ifndef USING_OVM_1
+<   `include "ovm_register_transaction_pkg.svh"
+<   `include "ovm_register_agent_pkg.svh"
+<   `include "ovm_register_sequences_pkg.svh"
+<   `include "ovm_register_env_pkg.svh"
+<   `include "ovm_register_auto_test.svh"
+---
+> `ifndef USING_UVM_1
+>   `include "uvm_register_transaction_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_agent_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_sequences_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_env_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_auto_test.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+90,95c90,95
+<   `include "ovm_id_register.svh"
+<   `include "ovm_modal_register.svh"
+<   `include "ovm_coherent_register.svh"
+<   `include "ovm_fifo_register.svh"
+<   `include "ovm_broadcast_register.svh"
+<   `include "ovm_indirect_register.svh"
+---
+>   `include "uvm_id_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_modal_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_coherent_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_fifo_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_broadcast_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_indirect_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+97c97
+<   `include "ovm_memory.svh"
+---
+>   `include "uvm_memory.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+99c99
+< endpackage : ovm_register_pkg
+---
+> endpackage : uvm_register_pkg
+diff -r ./src/ovm_register_sequences_pkg.svh /tmp/Q8Mg5N9wNc/src/ovm_register_sequences_pkg.svh
+20c20
+< // TITLE: OVM Register Sequences
+---
+> // TITLE: UVM Register Sequences
+23c23
+< // CLASS: ovm_register_sequence_base
+---
+> // CLASS: uvm_register_sequence_base
+28,31c28,31
+< class ovm_register_sequence_base
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+<   extends ovm_sequence #(REQ, RSP);
+---
+> class uvm_register_sequence_base
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+>   extends uvm_sequence #(REQ, RSP);
+33,34c33,34
+<   `ovm_sequence_utils(ovm_register_sequence_base#(REQ, RSP), 
+<     ovm_register_sequencer#(REQ, RSP))
+---
+>   `uvm_sequence_utils(uvm_register_sequence_base#(REQ, RSP), 
+>     uvm_register_sequencer#(REQ, RSP))
+40c40
+<   function new(string name = "ovm_register_sequence_base");
+---
+>   function new(string name = "uvm_register_sequence_base");
+100c100
+<       ovm_report_warning("MISMATCH", 
+---
+>       uvm_report_warning("MISMATCH", 
+109c109
+<     ovm_sequencer_base my_sequencer;
+---
+>     uvm_sequencer_base my_sequencer;
+117c117
+<     ovm_report_info(get_type_name(),
+---
+>     uvm_report_info(get_type_name(),
+124,126c124,126
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+<   extends ovm_register_sequence_base #(REQ, RSP);
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+>   extends uvm_register_sequence_base #(REQ, RSP);
+128c128
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+130c130
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+151c151
+<       ovm_register_sequencer#(REQ, RSP) my_sequencer;
+---
+>       uvm_register_sequencer#(REQ, RSP) my_sequencer;
+163c163
+<       ovm_report_info("BuiltInTest", 
+---
+>       uvm_report_info("BuiltInTest", 
+167c167
+<         ovm_report_info("BuiltInTest", 
+---
+>         uvm_report_info("BuiltInTest", 
+177,178c177,178
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+181c181
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+183c183
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+202,203c202,203
+<     ovm_report_info("Alias", "----------");
+<     ovm_report_info("Alias", 
+---
+>     uvm_report_info("Alias", "----------");
+>     uvm_report_info("Alias", 
+208c208
+< 	    ovm_report_info("Alias", 
+---
+> 	    uvm_report_info("Alias", 
+220c220
+< 	    ovm_report_info("Alias", 
+---
+> 	    uvm_report_info("Alias", 
+231c231
+< 		  ovm_report_info("Alias", 
+---
+> 		  uvm_report_info("Alias", 
+239c239
+<     ovm_report_info("Alias", 
+---
+>     uvm_report_info("Alias", 
+247,248c247,248
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+251c251
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+253c253
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+271,272c271,272
+<     ovm_report_info("PowerOnReset", "----------");
+<     ovm_report_info("PowerOnReset", 
+---
+>     uvm_report_info("PowerOnReset", "----------");
+>     uvm_report_info("PowerOnReset", 
+277c277
+< 	    ovm_report_info("PowerOnReset", 
+---
+> 	    uvm_report_info("PowerOnReset", 
+286c286
+< 	    ovm_report_info("PowerOnReset", 
+---
+> 	    uvm_report_info("PowerOnReset", 
+294c294
+<     ovm_report_info("PowerOnReset", 
+---
+>     uvm_report_info("PowerOnReset", 
+301,302c301,302
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+305c305
+<   //`ovm_sequence_utils(
+---
+>   //`uvm_sequence_utils(
+307c307
+<       //ovm_register_sequencer#(REQ, RSP))
+---
+>       //uvm_register_sequencer#(REQ, RSP))
+331,332c331,332
+<     ovm_report_info(test_name, "----------");
+<     ovm_report_info(test_name, 
+---
+>     uvm_report_info(test_name, "----------");
+>     uvm_report_info(test_name, 
+340c340
+< 	    ovm_report_info(test_name, 
+---
+> 	    uvm_report_info(test_name, 
+348c348
+< 		  ovm_report_info(test_name, 
+---
+> 		  uvm_report_info(test_name, 
+371c371
+<     ovm_report_info(test_name, 
+---
+>     uvm_report_info(test_name, 
+378,379c378,379
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+382c382
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+384c384
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+409,410c409,410
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+413c413
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+415c415
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+438,439c438,439
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+442c442
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+444c444
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+462,463c462,463
+<     ovm_report_info(test_name, "----------");
+<     ovm_report_info(test_name, 
+---
+>     uvm_report_info(test_name, "----------");
+>     uvm_report_info(test_name, 
+471c471
+<         ovm_report_info(test_name, 
+---
+>         uvm_report_info(test_name, 
+490c490
+< 	    ovm_report_info(test_name, 
+---
+> 	    uvm_report_info(test_name, 
+508,509c508,509
+<   #(type REQ = ovm_sequence_item, 
+<     type RSP = ovm_sequence_item)
+---
+>   #(type REQ = uvm_sequence_item, 
+>     type RSP = uvm_sequence_item)
+512c512
+<   `ovm_sequence_utils(
+---
+>   `uvm_sequence_utils(
+514c514
+<       ovm_register_sequencer#(REQ, RSP))
+---
+>       uvm_register_sequencer#(REQ, RSP))
+539,540c539,540
+<     ovm_report_info("AutoTest", "----------");
+<     ovm_report_info("AutoTest", 
+---
+>     uvm_report_info("AutoTest", "----------");
+>     uvm_report_info("AutoTest", 
+545c545
+<       ovm_report_info("AutoTest", 
+---
+>       uvm_report_info("AutoTest", 
+551c551
+<     ovm_report_info("AutoTest", 
+---
+>     uvm_report_info("AutoTest", 
+diff -r ./src/ovm_register.svh /tmp/Q8Mg5N9wNc/src/ovm_register.svh
+20,21c20,21
+< // TITLE: OVM Register Base Classes
+< // The OVM Register Base classes reprent functionality
+---
+> // TITLE: UVM Register Base Classes
+> // The UVM Register Base classes reprent functionality
+25c25
+<  * OVM Register and Register Address Map *
+---
+>  * UVM Register and Register Address Map *
+30c30
+<   // Typedef : OVM_REGISTER_BIT_TYPE
+---
+>   // Typedef : UVM_REGISTER_BIT_TYPE
+33c33
+<   typedef bit unsigned OVM_REGISTER_BIT_TYPE;
+---
+>   typedef bit unsigned UVM_REGISTER_BIT_TYPE;
+45,46c45,46
+<   typedef OVM_REGISTER_BIT_TYPE [31:0] bv32_t;
+<   typedef OVM_REGISTER_BIT_TYPE [63:0] bv64_t;
+---
+>   typedef UVM_REGISTER_BIT_TYPE [31:0] bv32_t;
+>   typedef UVM_REGISTER_BIT_TYPE [63:0] bv64_t;
+82,84c82,84
+<      OVM_REGISTER_FIELD_SET_BY_NAME, 
+<      OVM_REGISTER_FIELD_GET_BY_NAME
+<   } OVM_REGISTER_FIELD_ACCESS_T;
+---
+>      UVM_REGISTER_FIELD_SET_BY_NAME, 
+>      UVM_REGISTER_FIELD_GET_BY_NAME
+>   } UVM_REGISTER_FIELD_ACCESS_T;
+89c89
+<   typedef OVM_REGISTER_BIT_TYPE [7:0] bytearray_t[];
+---
+>   typedef UVM_REGISTER_BIT_TYPE [7:0] bytearray_t[];
+92c92
+<   typedef class ovm_register_base;
+---
+>   typedef class uvm_register_base;
+97c97
+<   typedef ovm_register_base register_list_t[$];
+---
+>   typedef uvm_register_base register_list_t[$];
+106c106
+<   // Typedef : ovm_register_field_info_t
+---
+>   // Typedef : uvm_register_field_info_t
+135c135
+<   } ovm_register_field_info_t;
+---
+>   } uvm_register_field_info_t;
+138c138
+<   static ovm_register_field_info_t NCV_field_forest[1000]; 
+---
+>   static uvm_register_field_info_t NCV_field_forest[1000]; 
+170c170
+<       ovm_report_fatal("field name lookup", 
+---
+>       uvm_report_fatal("field name lookup", 
+189c189
+<   } ovm_register_field_info_t;
+---
+>   } uvm_register_field_info_t;
+194c194
+<   //RICH typedef ovm_register_field_info_t field_list_t[$];
+---
+>   //RICH typedef uvm_register_field_info_t field_list_t[$];
+212c212
+<     ovm_report_info("ResetValueInConstructor", 
+---
+>     uvm_report_info("ResetValueInConstructor", 
+216c216
+<       ovm_report_info("ResetValueInConstructor",
+---
+>       uvm_report_info("ResetValueInConstructor",
+279c279
+<    * CLASS: ovm_register_base
+---
+>    * CLASS: uvm_register_base
+285c285
+<   virtual class ovm_register_base extends ovm_named_object;
+---
+>   virtual class uvm_register_base extends uvm_named_object;
+324c324
+<     function ovm_register_field_info_t get_field(
+---
+>     function uvm_register_field_info_t get_field(
+332c332
+<       ovm_register_field_info_t f;
+---
+>       uvm_register_field_info_t f;
+337c337
+<     ovm_register_field_info_t fields[string]; 
+---
+>     uvm_register_field_info_t fields[string]; 
+347,351c347,351
+<     `ovm_object_utils_begin(ovm_register_base)
+<       `ovm_field_string(register_name,      OVM_ALL_ON)
+<       `ovm_field_string(register_type,      OVM_ALL_ON)
+<       `ovm_field_string(register_attribute, OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_utils_begin(uvm_register_base)
+>       `uvm_field_string(register_name,      UVM_ALL_ON)
+>       `uvm_field_string(register_type,      UVM_ALL_ON)
+>       `uvm_field_string(register_attribute, UVM_ALL_ON)
+>     `uvm_object_utils_end
+377c377
+<         ovm_named_object p = null);
+---
+>         uvm_named_object p = null);
+384c384
+<     // Match the OVM engine
+---
+>     // Match the UVM engine
+398c398
+<     virtual function ovm_register_field_info_t 
+---
+>     virtual function uvm_register_field_info_t 
+401c401
+<       ovm_register_field_info_t f;
+---
+>       uvm_register_field_info_t f;
+507c507
+<       ovm_register_field_info_t f;
+---
+>       uvm_register_field_info_t f;
+511c511
+<         ovm_report_error("field_by_name", $psprintf(
+---
+>         uvm_report_error("field_by_name", $psprintf(
+515c515
+<         ovm_report_error("field_by_name", $psprintf(
+---
+>         uvm_report_error("field_by_name", $psprintf(
+538c538
+<           ovm_report_fatal("NameCheck", 
+---
+>           uvm_report_fatal("NameCheck", 
+540c540
+<           ovm_report_fatal("NameCheck", 
+---
+>           uvm_report_fatal("NameCheck", 
+581c581
+<         ovm_report_fatal("NCVCOMPAT", 
+---
+>         uvm_report_fatal("NCVCOMPAT", 
+615c615
+<         ovm_report_error("field_by_name",
+---
+>         uvm_report_error("field_by_name",
+624c624
+<       ovm_register_field_info_t f;
+---
+>       uvm_register_field_info_t f;
+640c640
+<       ovm_report_info("REG", 
+---
+>       uvm_report_info("REG", 
+644c644
+<         ovm_report_info("REG", 
+---
+>         uvm_report_info("REG", 
+648c648
+<           ovm_report_info("REG", $psprintf("    tag %s", t));
+---
+>           uvm_report_info("REG", $psprintf("    tag %s", t));
+650c650
+<         ovm_report_info("REG", 
+---
+>         uvm_report_info("REG", 
+653c653
+<           ovm_report_info("REG", $psprintf("    tag %s", t));
+---
+>           uvm_report_info("REG", $psprintf("    tag %s", t));
+663c663
+<       OVM_REGISTER_FIELD_ACCESS_T cmd, 
+---
+>       UVM_REGISTER_FIELD_ACCESS_T cmd, 
+665c665
+<       ovm_report_error("m_register_field_by_name", 
+---
+>       uvm_report_error("m_register_field_by_name", 
+683c683
+<         OVM_REGISTER_FIELD_SET_BY_NAME, name, x, v);
+---
+>         UVM_REGISTER_FIELD_SET_BY_NAME, name, x, v);
+698c698
+<         OVM_REGISTER_FIELD_GET_BY_NAME, name, x);
+---
+>         UVM_REGISTER_FIELD_GET_BY_NAME, name, x);
+705c705
+<       ovm_register_field_info_t f = find_field(name);
+---
+>       uvm_register_field_info_t f = find_field(name);
+731c731
+<         ovm_report_error("field_by_name", 
+---
+>         uvm_report_error("field_by_name", 
+734c734
+<         ovm_report_info("field_by_name", $psprintf(
+---
+>         uvm_report_info("field_by_name", $psprintf(
+736c736
+<         ovm_report_info("field_by_name", $psprintf(
+---
+>         uvm_report_info("field_by_name", $psprintf(
+738c738
+<         ovm_report_info("field_by_name", $psprintf(
+---
+>         uvm_report_info("field_by_name", $psprintf(
+749c749
+<         ovm_report_error("field_by_name", $psprintf(
+---
+>         uvm_report_error("field_by_name", $psprintf(
+752c752
+<         ovm_report_error("field_by_name", $psprintf(
+---
+>         uvm_report_error("field_by_name", $psprintf(
+755c755
+<         ovm_report_error("field_by_name", $psprintf(
+---
+>         uvm_report_error("field_by_name", $psprintf(
+773c773
+<         ovm_report_error("peek_field_by_name", 
+---
+>         uvm_report_error("peek_field_by_name", 
+779c779
+<         ovm_report_error("poke_field_by_name", 
+---
+>         uvm_report_error("poke_field_by_name", 
+784c784
+<         ovm_report_error("read_field_by_name", 
+---
+>         uvm_report_error("read_field_by_name", 
+790c790
+<         ovm_report_error("write_field_by_name", 
+---
+>         uvm_report_error("write_field_by_name", 
+797c797
+<         ovm_report_error("set_MASK_field_by_name", 
+---
+>         uvm_report_error("set_MASK_field_by_name", 
+803c803
+<         ovm_report_error("set_access_policy_field_by_name", 
+---
+>         uvm_report_error("set_access_policy_field_by_name", 
+809c809
+<         ovm_report_error("reset_field_by_name", 
+---
+>         uvm_report_error("reset_field_by_name", 
+814c814
+<         ovm_report_error("reset_field_by_name", 
+---
+>         uvm_report_error("reset_field_by_name", 
+824c824
+<       ovm_named_object container);
+---
+>       uvm_named_object container);
+826c826
+<       ovm_report_info("ovm_register_base", 
+---
+>       uvm_report_info("uvm_register_base", 
+865c865
+<       ovm_report_info("BACKDOOR", 
+---
+>       uvm_report_info("BACKDOOR", 
+868c868
+<       ovm_register_set_hdl(dut_register_name, v);
+---
+>       uvm_register_set_hdl(dut_register_name, v);
+875c875
+<       ovm_report_info("BACKDOOR", 
+---
+>       uvm_report_info("BACKDOOR", 
+879c879
+<       ovm_register_get_hdl(dut_register_name, v);
+---
+>       uvm_register_get_hdl(dut_register_name, v);
+881c881
+<       ovm_report_info("BACKDOOR", 
+---
+>       uvm_report_info("BACKDOOR", 
+919c919
+<     // Overrides ovm_object::set_name()
+---
+>     // Overrides uvm_object::set_name()
+928c928
+<       ovm_report_error("ovm_register_base", 
+---
+>       uvm_report_error("uvm_register_base", 
+936c936
+<     // Return the ovm_named_object that "contains" this 
+---
+>     // Return the uvm_named_object that "contains" this 
+939c939
+<     virtual function ovm_named_object get_container();
+---
+>     virtual function uvm_named_object get_container();
+946c946
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+956c956
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+963c963
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+971c971
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+978c978
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+986c986
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+994c994
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1001c1001
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1009c1009
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1066c1066
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1074c1074
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1083c1083
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1113c1113
+<         ovm_report_error("ovm_register", 
+---
+>         uvm_report_error("uvm_register", 
+1127c1127
+<       ovm_report_error("ovm_register", 
+---
+>       uvm_report_error("uvm_register", 
+1149c1149
+<    * CLASS: ovm_register
+---
+>    * CLASS: uvm_register
+1162c1162
+<    *   class r1 extends ovm_register#(r1_t);
+---
+>    *   class r1 extends uvm_register#(r1_t);
+1166,1167c1166,1167
+<   class ovm_register #(type T = int)
+<       extends ovm_register_base;
+---
+>   class uvm_register #(type T = int)
+>       extends uvm_register_base;
+1169,1170c1169,1170
+<     typedef ovm_register #(T) this_type;
+<     typedef OVM_REGISTER_BIT_TYPE[$bits(T)-1:0] bitvector_t;
+---
+>     typedef uvm_register #(T) this_type;
+>     typedef UVM_REGISTER_BIT_TYPE[$bits(T)-1:0] bitvector_t;
+1174c1174
+<     typedef OVM_REGISTER_BIT_TYPE
+---
+>     typedef UVM_REGISTER_BIT_TYPE
+1293c1293
+<         ovm_report_error("set_actual_register()",
+---
+>         uvm_report_error("set_actual_register()",
+1304c1304
+< // Group: OVM Register semaphore
+---
+> // Group: UVM Register semaphore
+1306c1306
+<     // An OVM Register semaphore, with the same
+---
+>     // An UVM Register semaphore, with the same
+1351c1351
+<     //       ovm_named_object container?  secret id or password?
+---
+>     //       uvm_named_object container?  secret id or password?
+1393,1396c1393,1396
+<     `ovm_object_param_utils_begin(ovm_register#(T))
+<       `ovm_field_int(data,       OVM_ALL_ON)
+<       `ovm_field_int(resetValue, OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_param_utils_begin(uvm_register#(T))
+>       `uvm_field_int(data,       UVM_ALL_ON)
+>       `uvm_field_int(resetValue, UVM_ALL_ON)
+>     `uvm_object_utils_end
+1410c1410
+<         ovm_report_error(place, 
+---
+>         uvm_report_error(place, 
+1432c1432
+<         OVM_REGISTER_FIELD_ACCESS_T cmd, 
+---
+>         UVM_REGISTER_FIELD_ACCESS_T cmd, 
+1434c1434
+<       ovm_report_error("m_register_field_by_name", 
+---
+>       uvm_report_error("m_register_field_by_name", 
+1468c1468
+<           ovm_report_error("set_MASK_field_by_name", 
+---
+>           uvm_report_error("set_MASK_field_by_name", 
+1471c1471
+<           ovm_report_info("set_MASK_field_by_name", 
+---
+>           uvm_report_info("set_MASK_field_by_name", 
+1474c1474
+<             ovm_report_info("set_MASK_field_by_name", 
+---
+>             uvm_report_info("set_MASK_field_by_name", 
+1564c1564
+<           ovm_report_error("set_access_policy", 
+---
+>           uvm_report_error("set_access_policy", 
+1568c1568
+<           ovm_report_info("set_access_policy",
+---
+>           uvm_report_info("set_access_policy",
+1571c1571
+<             ovm_report_info("set_access_policy", 
+---
+>             uvm_report_info("set_access_policy", 
+1575c1575
+<           ovm_report_info("set_access_policy",
+---
+>           uvm_report_info("set_access_policy",
+1736c1736
+<       ovm_report_info("dump_bytes()", 
+---
+>       uvm_report_info("dump_bytes()", 
+1739c1739
+<       ovm_report_info("dump_bytes()", 
+---
+>       uvm_report_info("dump_bytes()", 
+1747c1747
+<         ovm_report_info("dump_bytes()", 
+---
+>         uvm_report_info("dump_bytes()", 
+1793c1793
+<         ovm_report_info("bus_read_bv()", $psprintf(
+---
+>         uvm_report_info("bus_read_bv()", $psprintf(
+1796c1796
+<         ovm_report_info("bus_read_bv()", $psprintf(
+---
+>         uvm_report_info("bus_read_bv()", $psprintf(
+1800c1800
+<         ovm_report_error("bus_read_bv()", $psprintf( 
+---
+>         uvm_report_error("bus_read_bv()", $psprintf( 
+1804c1804
+<         ovm_report_error("bus_read_bv()", $psprintf( 
+---
+>         uvm_report_error("bus_read_bv()", $psprintf( 
+1938,1939c1938,1939
+<     ovm_analysis_port #(this_type) read_ap;
+<     ovm_analysis_port #(this_type) write_ap;
+---
+>     uvm_analysis_port #(this_type) read_ap;
+>     uvm_analysis_port #(this_type) write_ap;
+1943,1945c1943,1945
+<     //  (ovm_register_base type).
+<     ovm_analysis_port #(ovm_register_base) generic_read_ap;
+<     ovm_analysis_port #(ovm_register_base) generic_write_ap;
+---
+>     //  (uvm_register_base type).
+>     uvm_analysis_port #(uvm_register_base) generic_read_ap;
+>     uvm_analysis_port #(uvm_register_base) generic_write_ap;
+1961c1961
+<     //             ovm_named_object_top.
+---
+>     //             uvm_named_object_top.
+1982c1982
+<       // from the OVM. When we can't find something in
+---
+>       // from the UVM. When we can't find something in
+1984,1985c1984,1985
+<       // the OVM issuing a WARNING message.
+<       ovm_top.set_report_id_action("Lookup Error", NO_ACTION);
+---
+>       // the UVM issuing a WARNING message.
+>       uvm_top.set_report_id_action("Lookup Error", NO_ACTION);
+1987c1987
+<       while (ovm_named_object_top.lookup(l_new_name) != null) 
+---
+>       while (uvm_named_object_top.lookup(l_new_name) != null) 
+1996c1996
+<       ovm_top.set_report_id_action("Lookup Error", WARNING);
+---
+>       uvm_top.set_report_id_action("Lookup Error", WARNING);
+2008c2008
+<     function void build_ap(ovm_named_object container = null);
+---
+>     function void build_ap(uvm_named_object container = null);
+2041c2041
+<         ovm_named_object p = null, T l_resetVal = 0);
+---
+>         uvm_named_object p = null, T l_resetVal = 0);
+2048c2048
+<         ovm_report_error("Register",
+---
+>         uvm_report_error("Register",
+2052c2052
+<         ovm_report_info("Register",
+---
+>         uvm_report_info("Register",
+2055c2055
+<         ovm_report_fatal("Register",
+---
+>         uvm_report_fatal("Register",
+2068c2068
+<           ovm_report_info("ResetValueInConstructor",
+---
+>           uvm_report_info("ResetValueInConstructor",
+2261,2264c2261,2264
+<     virtual function ovm_object clone();
+<       ovm_report_info("ovm_register_base",
+<         "Calling clone() for ovm_register_base class");
+<       ovm_report_error("ovm_register_base", $psprintf(
+---
+>     virtual function uvm_object clone();
+>       uvm_report_info("uvm_register_base",
+>         "Calling clone() for uvm_register_base class");
+>       uvm_report_error("uvm_register_base", $psprintf(
+2338c2338
+<     virtual function bit compare_b(ovm_register_base b);
+---
+>     virtual function bit compare_b(uvm_register_base b);
+2375c2375
+<    * ovm_mapped_register
+---
+>    * uvm_mapped_register
+2381c2381
+<   class ovm_mapped_register extends ovm_void;
+---
+>   class uvm_mapped_register extends uvm_void;
+2404c2404
+<     ovm_register_base register;
+---
+>     uvm_register_base register;
+2443,2445c2443,2445
+<   typedef class ovm_register_container;
+<   typedef class ovm_register_map;
+<   typedef class ovm_register_file;
+---
+>   typedef class uvm_register_container;
+>   typedef class uvm_register_map;
+>   typedef class uvm_register_file;
+2462,2463c2462,2463
+<   class mapped_register_container extends ovm_void;
+<     ovm_register_container container;
+---
+>   class mapped_register_container extends uvm_void;
+>     uvm_register_container container;
+2466c2466
+<     ovm_register_container mapped_in;
+---
+>     uvm_register_container mapped_in;
+2477c2477
+<       ovm_register_container container;
+---
+>       uvm_register_container container;
+2492c2492
+<    * CLASS: ovm_register_container
+---
+>    * CLASS: uvm_register_container
+2504,2505c2504,2505
+<   class ovm_register_container extends
+<       ovm_named_object;
+---
+>   class uvm_register_container extends
+>       uvm_named_object;
+2507c2507
+<     `ovm_object_utils(ovm_register_container)
+---
+>     `uvm_object_utils(uvm_register_container)
+2509c2509
+<     function new(string name = "", ovm_named_object p = null);
+---
+>     function new(string name = "", uvm_named_object p = null);
+2514c2514
+<     // Match the OVM engine
+---
+>     // Match the UVM engine
+2516,2517c2516,2517
+< 	  `ovm_warning("build", "DEPRECATED: The function build() should not be used.")
+< 	  `ovm_info("build", "Use build_maps() instead.", OVM_MEDIUM)
+---
+> 	  `uvm_warning("build", "DEPRECATED: The function build() should not be used.")
+> 	  `uvm_info("build", "Use build_maps() instead.", UVM_MEDIUM)
+2522,2523c2522,2523
+< 	  `ovm_error("build_maps", "The function build_maps() has not been overridden")
+< 	  `ovm_error("build_maps", "The build_maps() function is used to create the address maps")
+---
+> 	  `uvm_error("build_maps", "The function build_maps() has not been overridden")
+> 	  `uvm_error("build_maps", "The build_maps() function is used to create the address maps")
+2542c2542
+<     protected ovm_mapped_register addrSpace[address_t];
+---
+>     protected uvm_mapped_register addrSpace[address_t];
+2551c2551
+<     /*protected*/ ovm_mapped_register nameSpace[string];
+---
+>     /*protected*/ uvm_mapped_register nameSpace[string];
+2562c2562
+<     protected ovm_mapped_register nameSpace_alias[string];
+---
+>     protected uvm_mapped_register nameSpace_alias[string];
+2565c2565
+<     ovm_register_base mapped_memories[string];
+---
+>     uvm_register_base mapped_memories[string];
+2584c2584
+<         ovm_mapped_register mapped_memory;
+---
+>         uvm_mapped_register mapped_memory;
+2646c2646
+<         ovm_register_container container, address_t start);
+---
+>         uvm_register_container container, address_t start);
+2648,2649c2648,2649
+<       ovm_register_file register_file;
+<       ovm_register_map register_map;
+---
+>       uvm_register_file register_file;
+>       uvm_register_map register_map;
+2692c2692
+<         ovm_report_error("m_add_mapped_register_container()", 
+---
+>         uvm_report_error("m_add_mapped_register_container()", 
+2732c2732
+<         ovm_register_container container, string name); 
+---
+>         uvm_register_container container, string name); 
+2735c2735
+<         ovm_register_container container, string name); 
+---
+>         uvm_register_container container, string name); 
+2738c2738
+<         ovm_register_container container, string name); 
+---
+>         uvm_register_container container, string name); 
+2754c2754
+<     ovm_register_container container;
+---
+>     uvm_register_container container;
+2759c2759
+<     // the function ovm_parse_path_name() turns the
+---
+>     // the function uvm_parse_path_name() turns the
+2761c2761
+<     ovm_parse_path_name(l, name);
+---
+>     uvm_parse_path_name(l, name);
+2780c2780
+<     ovm_register_container found_container;
+---
+>     uvm_register_container found_container;
+2794c2794
+<       ovm_report_error("m_find_register_container()", 
+---
+>       uvm_report_error("m_find_register_container()", 
+2852c2852
+<       ovm_register_container mapped_container
+---
+>       uvm_register_container mapped_container
+2867c2867
+<       ovm_register_base r;
+---
+>       uvm_register_base r;
+2909c2909
+<       ovm_register_map rm;
+---
+>       uvm_register_map rm;
+3041c3041
+<       ovm_report_info("regmap", 
+---
+>       uvm_report_info("regmap", 
+3069c3069
+<       ovm_report_info("regmap", 
+---
+>       uvm_report_info("regmap", 
+3128c3128
+<       ovm_register_base register, string alias_name);
+---
+>       uvm_register_base register, string alias_name);
+3133c3133
+<         ovm_report_error("add_register_alias", 
+---
+>         uvm_report_error("add_register_alias", 
+3168c3168
+<             ovm_report_error("ovm_register_container",
+---
+>             uvm_report_error("uvm_register_container",
+3173c3173
+<             ovm_report_info("ovm_register_container",
+---
+>             uvm_report_info("uvm_register_container",
+3186c3186
+<         ovm_report_error("ovm_register_container",
+---
+>         uvm_report_error("uvm_register_container",
+3188c3188
+<         ovm_report_info("ovm_register_container",
+---
+>         uvm_report_info("uvm_register_container",
+3234c3234
+<           ovm_register_base register,
+---
+>           uvm_register_base register,
+3237c3237
+<       ovm_mapped_register mapped_register;
+---
+>       uvm_mapped_register mapped_register;
+3244c3244
+<         ovm_report_error("ovm_register_container", 
+---
+>         uvm_report_error("uvm_register_container", 
+3300c3300
+<         ovm_report_error("ovm_register_container", 
+---
+>         uvm_report_error("uvm_register_container", 
+3318c3318
+<           ovm_register_container rf, address_t addr);
+---
+>           uvm_register_container rf, address_t addr);
+3320c3320
+<        ovm_register_file rf_handle;
+---
+>        uvm_register_file rf_handle;
+3323c3323
+<          ovm_report_error("ovm_register_map",
+---
+>          uvm_report_error("uvm_register_map",
+3339c3339
+<           ovm_register_container rm, address_t addr);
+---
+>           uvm_register_container rm, address_t addr);
+3344c3344
+<          ovm_report_error("ovm_register_map", 
+---
+>          uvm_report_error("uvm_register_map", 
+3385c3385
+<         ovm_register_base memory,
+---
+>         uvm_register_base memory,
+3389c3389
+<         ovm_mapped_register mapped_register;
+---
+>         uvm_mapped_register mapped_register;
+3399c3399
+<           ovm_report_error("MEM", 
+---
+>           uvm_report_error("MEM", 
+3429c3429
+<         ovm_register_base register,
+---
+>         uvm_register_base register,
+3457c3457
+<         ovm_report_error("ovm_register_container", 
+---
+>         uvm_report_error("uvm_register_container", 
+3481c3481
+<         ovm_report_error("ovm_register_container", 
+---
+>         uvm_report_error("uvm_register_container", 
+3502c3502
+<     virtual function ovm_register_base
+---
+>     virtual function uvm_register_base
+3511c3511
+<       ovm_report_error("ovm_register_container", 
+---
+>       uvm_report_error("uvm_register_container", 
+3521c3521
+<     local virtual function ovm_mapped_register
+---
+>     local virtual function uvm_mapped_register
+3524c3524
+<       ovm_mapped_register mapped_register;
+---
+>       uvm_mapped_register mapped_register;
+3537c3537
+<     virtual function ovm_register_base
+---
+>     virtual function uvm_register_base
+3540c3540
+<         ovm_mapped_register mr;
+---
+>         uvm_mapped_register mr;
+3543c3543
+<             ovm_report_error("ovm_register_container", 
+---
+>             uvm_report_error("uvm_register_container", 
+3556c3556
+<       ovm_register_base r = 
+---
+>       uvm_register_base r = 
+3570c3570
+<       ovm_register_base r = 
+---
+>       uvm_register_base r = 
+3584c3584
+<       ovm_register_base r = 
+---
+>       uvm_register_base r = 
+3593c3593
+<       ovm_register_base r = 
+---
+>       uvm_register_base r = 
+3602c3602
+<    * CLASS: ovm_register_file
+---
+>    * CLASS: uvm_register_file
+3615c3615
+<   class ovm_register_file extends ovm_register_container;
+---
+>   class uvm_register_file extends uvm_register_container;
+3617c3617
+<     `ovm_object_utils(ovm_register_file)
+---
+>     `uvm_object_utils(uvm_register_file)
+3619c3619
+<     function new(string name = "", ovm_named_object p = null);
+---
+>     function new(string name = "", uvm_named_object p = null);
+3625c3625
+<       ovm_report_error("ovm_register_file", 
+---
+>       uvm_report_error("uvm_register_file", 
+3631c3631
+<       ovm_report_error("ovm_register_file", 
+---
+>       uvm_report_error("uvm_register_file", 
+3637c3637
+<    * CLASS: ovm_register_map
+---
+>    * CLASS: uvm_register_map
+3646c3646
+<   class ovm_register_map extends ovm_register_file;
+---
+>   class uvm_register_map extends uvm_register_file;
+3648c3648
+<     `ovm_object_utils(ovm_register_map)
+---
+>     `uvm_object_utils(uvm_register_map)
+3650c3650
+<     function new(string name = "", ovm_named_object p = null);
+---
+>     function new(string name = "", uvm_named_object p = null);
+3661c3661
+<     // use ovm_top.
+---
+>     // use uvm_top.
+3674c3674
+<     static function ovm_register_map 
+---
+>     static function uvm_register_map 
+3677c3677
+<         ovm_component c = null);
+---
+>         uvm_component c = null);
+3679,3680c3679,3680
+<       ovm_object       o;
+<       ovm_register_map register_map;
+---
+>       uvm_object       o;
+>       uvm_register_map register_map;
+3685c3685
+<         c = ovm_root::get();
+---
+>         c = uvm_root::get();
+3691c3691
+<         c.ovm_report_error("RegisterMap", $psprintf(
+---
+>         c.uvm_report_error("RegisterMap", $psprintf(
+3700c3700
+<     // Function: ovm_register_get_register_map() (DEPRECATED)
+---
+>     // Function: uvm_register_get_register_map() (DEPRECATED)
+3704,3705c3704,3705
+<     static function ovm_register_map 
+<       ovm_register_get_register_map(
+---
+>     static function uvm_register_map 
+>       uvm_register_get_register_map(
+3707c3707
+<         ovm_component c = null);
+---
+>         uvm_component c = null);
+diff -r ./src/ovm_register_transaction_pkg.svh /tmp/Q8Mg5N9wNc/src/ovm_register_transaction_pkg.svh
+20c20
+< // TITLE: OVM Register Transactions
+---
+> // TITLE: UVM Register Transactions
+34c34
+<   // CLASS: ovm_register_transaction
+---
+>   // CLASS: uvm_register_transaction
+44,45c44,45
+<   class ovm_register_transaction 
+<     extends ovm_sequence_item;
+---
+>   class uvm_register_transaction 
+>     extends uvm_sequence_item;
+61,66c61,66
+<     `ovm_object_utils_begin(ovm_register_transaction)
+<       `ovm_field_enum  (op_code_t, op,     OVM_ALL_ON)
+<       `ovm_field_string(           name,   OVM_ALL_ON)
+<       `ovm_field_int   (           data,   OVM_ALL_ON)
+<       `ovm_field_enum  (status_t,  status, OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_utils_begin(uvm_register_transaction)
+>       `uvm_field_enum  (op_code_t, op,     UVM_ALL_ON)
+>       `uvm_field_string(           name,   UVM_ALL_ON)
+>       `uvm_field_int   (           data,   UVM_ALL_ON)
+>       `uvm_field_enum  (status_t,  status, UVM_ALL_ON)
+>     `uvm_object_utils_end
+72c72
+<     function void copy(ovm_register_transaction t);
+---
+>     function void copy(uvm_register_transaction t);
+79c79
+<     function void copy_req(ovm_register_transaction t);
+---
+>     function void copy_req(uvm_register_transaction t);
+84,85c84,85
+<     function ovm_object clone();
+<       ovm_register_transaction t;
+---
+>     function uvm_object clone();
+>       uvm_register_transaction t;
+109c109
+<     extends ovm_sequence_item;
+---
+>     extends uvm_sequence_item;
+123,127c123,127
+<     `ovm_object_utils_begin(bus_transaction)
+<       `ovm_field_enum(op_code_t, op,      OVM_ALL_ON)
+<       `ovm_field_int (           address, OVM_ALL_ON)
+<       `ovm_field_int (           data,    OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_utils_begin(bus_transaction)
+>       `uvm_field_enum(op_code_t, op,      UVM_ALL_ON)
+>       `uvm_field_int (           address, UVM_ALL_ON)
+>       `uvm_field_int (           data,    UVM_ALL_ON)
+>     `uvm_object_utils_end
+157,161c157,161
+<     `ovm_object_utils_begin(bus_request)
+<       `ovm_field_enum(op_code_t, op,      OVM_ALL_ON)
+<       `ovm_field_int (           address, OVM_ALL_ON)
+<       `ovm_field_int (           data,    OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_utils_begin(bus_request)
+>       `uvm_field_enum(op_code_t, op,      UVM_ALL_ON)
+>       `uvm_field_int (           address, UVM_ALL_ON)
+>       `uvm_field_int (           data,    UVM_ALL_ON)
+>     `uvm_object_utils_end
+163c163
+<     function ovm_object clone();
+---
+>     function uvm_object clone();
+184,189c184,189
+<     `ovm_object_utils_begin(bus_response)
+<       `ovm_field_enum(op_code_t, op,      OVM_ALL_ON)
+<       `ovm_field_int (           address, OVM_ALL_ON)
+<       `ovm_field_int (           data,    OVM_ALL_ON)
+<       `ovm_field_enum(status_t,  status,  OVM_ALL_ON)
+<     `ovm_object_utils_end
+---
+>     `uvm_object_utils_begin(bus_response)
+>       `uvm_field_enum(op_code_t, op,      UVM_ALL_ON)
+>       `uvm_field_int (           address, UVM_ALL_ON)
+>       `uvm_field_int (           data,    UVM_ALL_ON)
+>       `uvm_field_enum(status_t,  status,  UVM_ALL_ON)
+>     `uvm_object_utils_end
+191c191
+<     function ovm_object clone();
+---
+>     function uvm_object clone();
+diff -r ./src/ovm_register_version.svh /tmp/Q8Mg5N9wNc/src/ovm_register_version.svh
+22,23c22,23
+< `ifndef OVM_REGISTER_VERSION_SVH
+< `define OVM_REGISTER_VERSION_SVH
+---
+> `ifndef UVM_REGISTER_VERSION_SVH
+> `define UVM_REGISTER_VERSION_SVH
+25,29c25,29
+< string ovm_register_name = "OVM Register Package";
+< int    ovm_register_major_rev = 2;
+< int    ovm_register_minor_rev = 0;
+< int    ovm_register_fix_rev = 0;
+< string ovm_register_mgc_copyright = "(C) 2007-2010 Mentor Graphics Corporation";
+---
+> string uvm_register_name = "UVM Register Package";
+> int    uvm_register_major_rev = 2;
+> int    uvm_register_minor_rev = 0;
+> int    uvm_register_fix_rev = 0;
+> string uvm_register_mgc_copyright = "(C) 2007-2010 Mentor Graphics Corporation";
+31c31
+< function string ovm_register_revision_string();
+---
+> function string uvm_register_revision_string();
+33c33
+<   if(ovm_register_fix_rev <= 0)
+---
+>   if(uvm_register_fix_rev <= 0)
+35,37c35,37
+<       ovm_register_name, 
+<       ovm_register_major_rev, 
+<       ovm_register_minor_rev);
+---
+>       uvm_register_name, 
+>       uvm_register_major_rev, 
+>       uvm_register_minor_rev);
+40,43c40,43
+<       ovm_register_name, 
+<       ovm_register_major_rev, 
+<       ovm_register_minor_rev, 
+<       ovm_register_fix_rev);
+---
+>       uvm_register_name, 
+>       uvm_register_major_rev, 
+>       uvm_register_minor_rev, 
+>       uvm_register_fix_rev);
+53c53
+< static bit ovm_register_initialized = initialize();
+---
+> static bit uvm_register_initialized = initialize();
+56c56
+<   if (!ovm_register_initialized) begin
+---
+>   if (!uvm_register_initialized) begin
+58,59c58,59
+<     $display("%s", ovm_register_revision_string());
+<     $display("%s", ovm_register_mgc_copyright);
+---
+>     $display("%s", uvm_register_revision_string());
+>     $display("%s", uvm_register_mgc_copyright);
+65c65
+< `endif // OVM_REGISTER_VERSION_SVH
+---
+> `endif // UVM_REGISTER_VERSION_SVH
+diff -r ./src/ovm_utils_pkg.sv /tmp/Q8Mg5N9wNc/src/ovm_utils_pkg.sv
+20c20
+< // OVM Utilities Package
+---
+> // UVM Utilities Package
+24,25c24,25
+< // Please use 'ovm_register_pkg' instead.
+< package ovm_utils_pkg;
+---
+> // Please use 'uvm_register_pkg' instead.
+> package uvm_utils_pkg;
+27c27
+<   import ovm_pkg::*;
+---
+>   import uvm_pkg::*;
+29,30c29,30
+<   `include "ovm_register_version.svh"
+<   `include "ovm_register.svh"
+---
+>   `include "uvm_register_version.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+32,39c32,39
+< `ifndef USING_OVM_1
+<   `include "ovm_macros.svh"
+< 
+<   `include "ovm_register_transaction_pkg.svh"
+<   `include "ovm_register_agent_pkg.svh"
+<   `include "ovm_register_sequences_pkg.svh"
+<   `include "ovm_register_env_pkg.svh"
+<   `include "ovm_register_auto_test.svh"
+---
+> `ifndef USING_UVM_1
+>   `include "uvm_macros.svh"
+> 
+>   `include "uvm_register_transaction_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_agent_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_sequences_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_env_pkg.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+>   `include "uvm_register_auto_test.svh" // -*- FIXME include of uvm file other than uvm_macros.svh detected, you should move to an import based methodology
+42c42
+< endpackage : ovm_utils_pkg;
+---
+> endpackage : uvm_utils_pkg;

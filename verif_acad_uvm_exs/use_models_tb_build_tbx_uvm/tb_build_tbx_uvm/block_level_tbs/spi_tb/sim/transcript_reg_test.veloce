@@ -1,0 +1,145 @@
+# vsim +UVM_TESTNAME=spi_reg_test -do {run -all} -c top_tb top_hdl 
+# //  Questa Sim
+# //  Version 10.0b linux May  5 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.spi_agent_pkg
+# Loading work.spi_sequence_lib_pkg
+# Loading work.apb_shared_pkg
+# Loading work.register_layering_pkg
+# Loading work.apb_agent_pkg
+# Loading work.uvm_register_pkg
+# Loading work.spi_register_pkg
+# Loading work.spi_env_pkg
+# Loading work.spi_bus_sequence_lib_pkg
+# Loading work.spi_virtual_seq_lib_pkg
+# Loading work.spi_test_lib_pkg
+# Loading work.top_tb(fast)
+# Loading work.tbxSemaphores_pkg
+# Loading work.xuvm_config_db_pkg
+# Loading work.top_hdl(fast)
+# Loading /home/hansv/svn_repositories/medtech/trunk/examples/xl_uvm/uvm_wiki/use_models_tb_build_tbx_uvm/tb_build_tbx_uvm/block_level_tbs/spi_tb/sim/work.veloce/_sc/linux_gcc-4.1.2/systemc.so
+# Loading /home/hansv/svn_repositories/medtech/trunk/examples/xl_uvm/uvm_wiki/use_models_tb_build_tbx_uvm/tb_build_tbx_uvm/block_level_tbs/spi_tb/sim/tbx.dir/questa/lib_tbxsysc.TbxSyscManagerInst
+# Compiling /var/tmp/hansv@velcsdcomodel_dpi_11158/exportwrapper.c
+# Loading /var/tmp/hansv@velcsdcomodel_dpi_11158/exportwrapper.so
+# Loading /medsj/edatools/mti/questa10.0b/questasim/uvm-1.0p1/linux/uvm_dpi.so
+# 
+#                  TBX Software Version 2.4.0-v2.0-PRE-RELEASE10
+#                 Copyright 2003-2010 Mentor Graphics Corporation
+#                               All Rights Reserved
+# 
+# 
+# Info!     [TBXR-8500]: : Initializing...
+# Info!     [TCLC-5501]: : No session exist to attach. Potentially key option is
+#                        missing.
+# Info!     [TCLC-5501]: : New Session Launched.
+# Info!     [TCLC-5501]: : Single User Mode. Other users will not be able to
+#                        attach to this session.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem
+#                        cont file'.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!     [RTS-20008]: : Connecting to emulator 'CSDSOLO1' ...
+# Info!     [RTS-20088]: : VeloceRuntime1 license checkout successful.
+# Info!     [TCLC-5502]: : Successfully connected to emulator.
+# Info!     [TCLC-5501]: : project database locked.
+# Info!     [TCLC-5501]: : Trace mode is set to SSR
+# Info!     [RTS-20013]: : Configuring the design.
+# Info!     [RTS-20052]: : 1 AVB license(s) needed, 1 checked out.
+# Info!     [RTS-20014]: : Resource reservation started ...
+# Info!     [RTS-20014]: : Resource Reservation done (time taken 0.03 s)
+# Info!     [RTS-20015]: : Resource initialization started ...
+# Info!                : : Reservation of AVB[0] UCK[1] CCH[0] without remapping
+#                       
+# Info!     [RTS-20015]: : Resource initialization done (time taken 10.62 s)
+# Info!     [RTS-20016]: : Trace system turn on started ...
+# Info!     [RTS-20016]: : Trace system turn on done (time taken 0.04 s)
+# Info!     [RTS-20018]: : Freeze design for setup started ...
+# Info!     [RTS-20018]: : Freeze design for setup done (time taken 0.12 s)
+# Info!     [RTS-20019]: : Clock routing started ...
+# Info!     [RTS-20019]: : Clock routing done (time taken 0.00 s)
+# Info!     [RTS-20032]: : Clock:top_hdl.Uclock Domain=0 Freq=1234.6 kHz (Hi=24
+#                        Lo=57)
+# Info!     [RTS-20024]: : Reset all used memories started ...
+# Info!     [RTS-20024]: : Reset all used memories done (time taken 0.01 s)
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!     [RTS-20021]: : Memory initialization started ...
+# Info!     [RTS-20021]: : Memory initialization done (time taken 0.00 s)
+# Info!     [RTS-20022]: : User state initialization started.
+# Info!     [RTS-20022]: : User state initialization done (time taken 2.47 s)
+# Info!     [RTS-20044]: : Store Interrupt config started ...
+# Info!     [RTS-20066]: : Trigger position: 50, Total trace depth: 64512 cycles.
+# Info!     [RTS-20044]: : Store Interrupt config done (time taken 3.28 s)
+# Info!     [TCLC-5502]: : Design configured successfully.
+# Info!     [RTS-20067]: : Load Breakpoint/Event done (time taken 0.00 s)
+# Info!     [TCLC-5651]: : Configure/Design download time: 0:00:16
+# Info!     [TBXR-8504]: : TAPI slot number used : 0
+# 
+# Info!     [TCLC-5501]: : Module:0 Finished successfully.
+# Info!     [TCLC-5654]: : Will work with the clock "top_hdl.Uclock"
+# Info!     [TCLC-5501]: : Emulation started.
+# Info!     [TCLC-5501]: : Emulation stopped.
+# Info!     [TCLC-5501]: : Run is over.
+# Info!     [TCLC-5501]: : 10 cycles run. Clock : top_hdl.Uclock.
+# Info!     [TCLC-5501]: : 10 cycles run till now. Clock : top_hdl.Uclock
+# Info!     [TCLC-5501]: : Module:0 Finished successfully.
+# Info!     [TBXR-8505]: : Starting up clocks...
+# Info!     [TCLC-5654]: : Will work with the clock "top_hdl.Uclock"
+# Info!     [TCLC-5501]: : Emulation started.
+# Info!     [TBXR-8507]: : Creating 320 bit write channel...
+# Info!     [TBXR-8508]: : Creating 1152 bit read channel...
+# Info!     [TBXR-8509]: : Initialization complete.
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.0p1 
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# UVM Register Package Version 2.0
+# (C) 2007-2010 Mentor Graphics Corporation
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_reg_test...
+# UVM_INFO verilog_src/uvm-1.0p1/src/base/uvm_objection.svh(1116) @ 1379000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../env/spi_scoreboard.svh(204) @ 1379000: uvm_test_top.m_env.m_scoreboard [SPI_SB_REPORT:] Test Passed - 0 transfers occured with no errors
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [SPI_SB_REPORT:]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /medsj/edatools/mti/questa10.0b/questasim/linux/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh(392)
+#    Time: 13790 ns  Iteration: 45  Instance: /top_tb
+# =============================================================================
+#                             SIMULATION STATISTICS                            
+# =============================================================================
+# Simulation finished at time 13790
+# 
+# Total number of TBX clocks:                                      108954
+# Total number of TBX clocks spent in HDL time advancement:        1379
+# Total number of TBX clocks spent in HDL due to callee execution: 0
+# Percentage TBX clocks spent in HDL time advance:                 1.27 %
+# -----------------------------------------------------------------------------
+# Total CPU time (user mode):                                      0.62 seconds.
+# Total time spent:                                                0.68 seconds.
+# -----------------------------------------------------------------------------
+# Info!     [RTS-20053]: : Freeing AVB license.
+# Info!     [RTS-20088]: : Freeing VeloceRuntime1 license
+# Info!     [TCLC-5501]: : Disconnected from emulator.
+# Info!     [TCLC-5501]: : project database unlocked.
+# Info!     [TCLC-5663]: : Shutting down the user runtime session.

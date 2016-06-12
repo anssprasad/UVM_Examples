@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\bin\cookbook-config.xsd">
+	<params>
+		<library>1</library>
+        </params>
+	<sv type="form">
+		<package>simple_pkg.sv</package>
+		<src>
+		</src>
+	</sv>
+</config>
+

@@ -1,0 +1,344 @@
+# vsim -do {run -all} -c top_tb top_hdl 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.1a linux Feb 21 2012
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.bidirect_bus_shared_pkg(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.bidirect_bus_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.top_hdl(fast)
+# Loading work.bus_if(fast)
+# Loading work.gpio_if(fast)
+# Loading work.bidirect_bus_slave(fast)
+# Loading work.bidirect_bus_driver_bfm(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /medsj/edatools/mti/questa10.1a/questasim/uvm-1.1a/linux/uvm_dpi.so
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.1a
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# (C) 2011      Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.accellera.org/activities/vip/release_notes_11a for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.accellera.org/activities/vip/mantis3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test bidirect_bus_test...
+# UVM_INFO top_tb.sv(219) @ 390: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	11edac8f
+#  read_not_write:	1
+#  delay:	12
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	d1eda2e9
+#  read_not_write:	1
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1050: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	59b0cc60
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1250: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	99b0b86c
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1570: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	999053b4
+#  read_not_write:	0
+#  delay:	12
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1850: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	5969d60c
+#  read_not_write:	0
+#  delay:	10
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 2330: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	d9308b1c
+#  read_not_write:	1
+#  delay:	19
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 2610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	10e685ef
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	99b0b86c
+# UVM_INFO top_tb.sv(219) @ 3030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	16bb34b8
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3230: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	d675394a
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000014
+#  write_data:	7e0203f9
+#  read_not_write:	1
+#  delay:	14
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	bff9c661
+#  read_not_write:	1
+#  delay:	5
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 4030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	a77aaa5d
+#  read_not_write:	1
+#  delay:	6
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 4410: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	66eafc11
+#  read_not_write:	0
+#  delay:	15
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 4630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	f89ab4b7
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 5130: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	381c7a01
+#  read_not_write:	1
+#  delay:	20
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 5310: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	219a3dd1
+#  read_not_write:	1
+#  delay:	4
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 5510: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000008
+#  write_data:	e10a73f7
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 5710: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	5e6f3d37
+#  read_not_write:	1
+#  delay:	5
+#  error:	0
+#  read_data:	66eafc11
+# UVM_INFO top_tb.sv(219) @ 5890: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	9dfec9ca
+#  read_not_write:	1
+#  delay:	4
+#  error:	0
+#  read_data:	999053b4
+# UVM_INFO top_tb.sv(219) @ 6170: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	9f77e60f
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 6470: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	5080a40c
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 6810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	e7e4d91e
+#  read_not_write:	0
+#  delay:	13
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	193cdfbf
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7190: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	1e612ea8
+#  read_not_write:	1
+#  delay:	3
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 7490: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	f7b8ac79
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	66eafc11
+# UVM_INFO top_tb.sv(219) @ 7610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	78e474d3
+#  read_not_write:	0
+#  delay:	2
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7830: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	90086aab
+#  read_not_write:	1
+#  delay:	6
+#  error:	0
+#  read_data:	e7e4d91e
+# UVM_INFO top_tb.sv(219) @ 8110: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000014
+#  write_data:	9126c563
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8230: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	be3cf091
+#  read_not_write:	1
+#  delay:	1
+#  error:	0
+#  read_data:	193cdfbf
+# UVM_INFO top_tb.sv(219) @ 8350: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	3f6a72ee
+#  read_not_write:	0
+#  delay:	2
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8570: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	607ffbf4
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	71707dd5
+#  read_not_write:	0
+#  delay:	8
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8910: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000008
+#  write_data:	3e72f04f
+#  read_not_write:	0
+#  delay:	1
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 9370: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	5f3d4302
+#  read_not_write:	0
+#  delay:	19
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 9630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	b034a20e
+#  read_not_write:	1
+#  delay:	8
+#  error:	0
+#  read_data:	78e474d3
+# UVM_INFO top_tb.sv(219) @ 9870: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	b913ca32
+#  read_not_write:	1
+#  delay:	7
+#  error:	0
+#  read_data:	5f3d4302
+# UVM_INFO top_tb.sv(219) @ 10210: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	67f3a16c
+#  read_not_write:	1
+#  delay:	12
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 10510: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	d8a87c6c
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	71707dd5
+# UVM_INFO top_tb.sv(219) @ 10930: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	116afaf0
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO verilog_src/uvm-1.1a/src/base/uvm_objection.svh(1120) @ 10930: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   44
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [seq_body]    40
+# ** Note: $finish    : /medsj/edatools/mti/questa10.1a/questasim/linux/../verilog_src/uvm-1.1a/src/base/uvm_root.svh(408)
+#    Time: 10930 ns  Iteration: 61  Instance: /top_tb

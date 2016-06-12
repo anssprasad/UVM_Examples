@@ -1,0 +1,77 @@
+# vsim +UVM_TESTNAME=spi_interrupt_test -do {run -all} -c -sv_lib /tools/mentor/questa/uvm-1.0/lib/uvm_dpi top_tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../../rtl/spi/rtl/verilog/spi_top.v(123): (vopt-2249) Non-positive replication multiplier inside concat. Replication will be ignored.
+# ** Warning: ../../../rtl/spi/rtl/verilog/spi_top.v(123): (vopt-2249) Non-positive replication multiplier inside concat. Replication will be ignored.
+# //  Questa Sim
+# //  Version 10.0a_1 linux Mar 11 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.spi_agent_pkg
+# Loading work.spi_sequence_lib_pkg
+# Loading work.register_layering_pkg
+# Loading work.apb_agent_pkg
+# Loading sv_std.mti_fli
+# Loading mtiOvm.ovm_pkg
+# Loading work.ovm_register_pkg
+# Loading work.spi_register_pkg
+# Loading work.spi_env_pkg
+# Loading work.spi_bus_sequence_lib_pkg
+# Loading work.spi_virtual_seq_lib_pkg
+# Loading work.spi_test_lib_pkg
+# Loading work.top_tb(fast)
+# Loading work.apb_if(fast)
+# Loading work.spi_top(fast)
+# ** Warning: (vsim-8607) ../../../rtl/spi/rtl/verilog/spi_top.v(123): Non-positive replication multiplier inside concat. Replication will be ignored.
+# Loading /tools/mentor/questa/uvm-1.0/lib/uvm_dpi.so
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.0
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# OVM-2.1.1
+# (C) 2007-2009 Mentor Graphics Corporation
+# (C) 2007-2009 Cadence Design Systems, Inc.
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# OVM Register Package Version 2.1
+# (C) 2007-2010 Mentor Graphics Corporation
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_interrupt_test...
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 53000: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 51deebc6c4cc8804b4c7cc97fbe7f537 RX_NEG State 1, no of bits 33
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 4559100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: d4b90144c43f973cb288a0c43be78c35 RX_NEG State 1, no of bits 97
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 11273100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: c7108e1b6d8fb4fd2d451c52a2f0274a RX_NEG State 1, no of bits 33
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 11491100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: cac95e149079e1e18aa4b28163d0ce44 RX_NEG State 1, no of bits 127
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 12085100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: bba5c264671e5e82eef4dbe39bb7868d RX_NEG State 1, no of bits 63
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 12677100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: b28504ee1490219d0a1c9775dbb63f4b RX_NEG State 0, no of bits 63
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 17079100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 9c339c403965e3061d374fec5361e001 RX_NEG State 1, no of bits 32
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 21453100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 22bad5c1972544d8bb51c181231aa8b RX_NEG State 0, no of bits 63
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 54303100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 71bed8d2b2861ef4b9fdecbd11ffdb1e RX_NEG State 0, no of bits 97
+# UVM_INFO ../../../agents/spi_agent/spi_driver.svh(69) @ 56337100: uvm_test_top.m_env.m_spi_agent.m_driver [SPI_DRV_RUN:] Starting transmission: 75a497f0b0f67785f4eea685ab992a5 RX_NEG State 1, no of bits 31
+# UVM_INFO verilog_src/uvm-1.0/src/base/uvm_objection.svh(1116) @ 60541000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../env/spi_scoreboard.svh(204) @ 60541000: uvm_test_top.m_env.m_scoreboard [SPI_SB_REPORT:] Test Passed - 10 transfers occured with no errors
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   13
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [SPI_DRV_RUN:]    10
+# [SPI_SB_REPORT:]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /scratch/tools/mentor/questa/10.0a_1/questasim/linux/../verilog_src/uvm-1.0/src/base/uvm_root.svh(392)
+#    Time: 605410 ns  Iteration: 44  Instance: /top_tb

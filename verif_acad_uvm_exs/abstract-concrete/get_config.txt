@@ -1,0 +1,19 @@
+HISTORY: - instead of lots of set_config_int() and get_config_int()
+mac_mii/mac_mii_base_frame_seq.svh:     if( !m_sequencer.get_config_object( "register_map" , t , 0  ) ) begin
+mac_mii/mii_config.svh:  static function mii_config get_config( uvm_component c );
+mac_mii/mii_config.svh:    if( !c.get_config_object( "mii_config" , o , 0 ) ) begin
+mac_mii/mii_rx_driver.svh:    m_config = mii_config::get_config(this); // get config object
+mac_mii/mii_tx_driver.svh:    m_config = mii_config::get_config(this); // get config object
+sequences/mac_simple_duplex_seq.svh:    m_config = wb_config::get_config(m_sequencer);  // get config object
+uvm_register-2.0/src/uvm_register_sequences_pkg.svh:    // Can't call get_config_*() from a sequence.
+wishbone/mac_reg_comp_base.svh:   if(! get_config_object( "register_map" , t , 0  ) ) 
+wishbone/wb_bus_bfm_driver.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_bus_bfm_monitor.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_bus_monitor.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_config.svh:  static function wb_config get_config( uvm_component c );
+wishbone/wb_config.svh:    if( !c.get_config_object( "wb_config" , o , 0 ) ) begin
+wishbone/wb_m_bus_driver.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_mac_reg_scoreboard.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_master_agent.svh:    m_config = wb_config::get_config(this); // get config object
+wishbone/wb_mem_map_access_base_seq.svh:     if( !m_sequencer.get_config_object( "register_map" , t , 0  ) )
+wishbone/wb_mem_scoreboard.svh:    m_config = wb_config::get_config(this); // get config object

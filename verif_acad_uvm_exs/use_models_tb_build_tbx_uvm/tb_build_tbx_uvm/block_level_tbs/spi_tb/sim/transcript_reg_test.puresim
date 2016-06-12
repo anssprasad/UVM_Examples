@@ -1,0 +1,65 @@
+# vsim +UVM_TESTNAME=spi_reg_test -do {run -all} -c top_tb top_hdl 
+# //  Questa Sim
+# //  Version 10.0b linux May  5 2011
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.spi_agent_pkg
+# Loading work.spi_sequence_lib_pkg
+# Loading work.apb_shared_pkg
+# Loading work.register_layering_pkg
+# Loading work.apb_agent_pkg
+# Loading work.uvm_register_pkg
+# Loading work.spi_register_pkg
+# Loading work.spi_env_pkg
+# Loading work.spi_bus_sequence_lib_pkg
+# Loading work.spi_virtual_seq_lib_pkg
+# Loading work.spi_test_lib_pkg
+# Loading work.top_tb(fast)
+# Loading work.xuvm_config_db_pkg
+# Loading work.top_hdl(fast)
+# Loading work.apb_if(fast)
+# Loading work.spi_if(fast)
+# Loading work.intr_if(fast)
+# Loading work.apb_driver_bfm(fast)
+# Loading work.apb_monitor_bfm(fast)
+# Loading work.spi_driver_bfm(fast)
+# Loading work.spi_monitor_bfm(fast)
+# Loading work.spi_top(fast)
+# ** Warning: (vsim-8607) ../../../rtl/spi/rtl/verilog/spi_top.v(123): Non-positive replication multiplier inside concat. Replication will be ignored.
+# Loading /medsj/edatools/mti/questa10.0b/questasim/uvm-1.0p1/linux/uvm_dpi.so
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.0p1 
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# UVM Register Package Version 2.0
+# (C) 2007-2010 Mentor Graphics Corporation
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_reg_test...
+# UVM_INFO verilog_src/uvm-1.0p1/src/base/uvm_objection.svh(1116) @ 1379000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../env/spi_scoreboard.svh(204) @ 1379000: uvm_test_top.m_env.m_scoreboard [SPI_SB_REPORT:] Test Passed - 0 transfers occured with no errors
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [SPI_SB_REPORT:]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /medsj/edatools/mti/questa10.0b/questasim/linux/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh(392)
+#    Time: 13790 ns  Iteration: 45  Instance: /top_tb

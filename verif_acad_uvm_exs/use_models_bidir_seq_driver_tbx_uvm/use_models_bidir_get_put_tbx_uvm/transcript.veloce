@@ -1,0 +1,435 @@
+# vsim -do {run -all} -c top_tb top_hdl 
+# Loading /var/tmp/hansv@velcsdcomodel_dpi_25036/linux_gcc-4.5.0/export_tramp.so
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.1a linux Feb 21 2012
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.bidirect_bus_shared_pkg(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.bidirect_bus_pkg(fast)
+# Loading work.top_tb(fast)
+# Loading work.tbxSemaphores_pkg(fast)
+# Loading work.top_hdl(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /home/hansv/svn_repositories/medtech/trunk/examples/xl_uvm/uvm_wiki/use_models_bidir_seq_driver_tbx_uvm/use_models_bidir_get_put_tbx_uvm/work.veloce/_sc/linux_gcc-4.3.3/systemc.so
+# Loading /home/hansv/svn_repositories/medtech/trunk/examples/xl_uvm/uvm_wiki/use_models_bidir_seq_driver_tbx_uvm/use_models_bidir_get_put_tbx_uvm/tbx.dir/questa/lib_tbxsysc.TbxSyscManagerInst
+# Compiling /var/tmp/hansv@velcsdcomodel_dpi_25036/linux_gcc-4.5.0/exportwrapper.c
+# Loading /var/tmp/hansv@velcsdcomodel_dpi_25036/linux_gcc-4.5.0/dpi_auto_compile.so
+# Loading /medsj/edatools/mti/questa10.1a/questasim/uvm-1.1a/linux/uvm_dpi.so
+# 
+#                           TBX Software Version 2.4.1.3
+#                 Copyright 2003-2012 Mentor Graphics Corporation
+#                               All Rights Reserved
+# 
+# 
+# Info!     [TBXR-8500]: : Initializing...
+# Info!     [TCLC-5501]: : No session exist to attach. Potentially key option is
+#                        missing.
+# Info!     [TCLC-5501]: : New Session Launched.
+# Info!     [TCLC-5501]: : Single User Mode. Other users will not be able to
+#                        attach to this session.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem
+#                        cont file'.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!     [RTS-20008]: : Connecting to emulator 'CSDSOLO1' ...
+# Info!     [RTS-20088]: : VeloceRuntime1 license checkout successful.
+# Info!      [DMS-9031]: : Different software versions found. An application with
+#                        Software Version '2.0.0.15' connected to dmsnexus of
+#                        Software Version '2.0.1.3'
+#                        (Process::/medsj/vel/release/v2013/Veloce_v2.0.1.3/bin/i386.linux/dmsnexusNexus
+#                        Pid::8538, Host::mach64.sje.mentorg.com, User::bbalthaz).
+#                        
+#                       
+# Info!     [TCLC-5502]: : Successfully connected to emulator.
+# Info!     [TCLC-5501]: : project database locked.
+# Info!     [TCLC-5501]: : Trace mode is set to SSR
+# Info!     [RTS-20013]: : Configuring the design.
+# Info!     [RTS-20052]: : 1 AVB license(s) checked out.
+# Info!     [RTS-20014]: : Resource reservation started ...
+# Info!     [RTS-20014]: : Resource Reservation done (time taken 0.03 s)
+# Info!     [RTS-20015]: : Resource initialization started ...
+# Info!                : : Reservation of AVB[0] UCK[1] CCH[0] without remapping
+#                       
+# Info!     [RTS-20018]: : Freeze design for setup started ...
+# Info!     [RTS-20015]: : Resource initialization done (time taken 12.06 s)
+# Info!     [RTS-20018]: : Freeze design for setup done (time taken 0.12 s)
+# Info!     [RTS-20016]: : Trace system turn on started ...
+# Info!     [RTS-20016]: : Trace system turn on done (time taken 0.17 s)
+# Info!     [RTS-20019]: : Clock routing started ...
+# Info!     [RTS-20019]: : Clock routing done (time taken 0.00 s)
+# Info!     [RTS-20032]: : Clock:top_hdl.Uclock Domain=0 Freq=1666.7 kHz (Hi=15
+#                        Lo=45)
+# Info!     [RTS-20024]: : Reset all used memories started ...
+# Info!     [RTS-20024]: : Reset all used memories done (time taken 0.01 s)
+# Info!       [CS-5156]: : Collecting memory contents from 'rtlc generated mem cont file'.
+# Info!     [RTS-20021]: : Memory initialization started ...
+# Info!     [RTS-20021]: : Memory initialization done (time taken 0.00 s)
+# Info!     [RTS-20022]: : User state initialization started.
+# Info!     [RTS-20022]: : User state initialization done (time taken 2.61 s)
+# Info!     [RTS-20044]: : Store Interrupt config started ...
+# Info!     [RTS-20066]: : Trigger position: 50, Total trace depth: 64512 cycles.
+# Info!     [RTS-20044]: : Store Interrupt config done (time taken 3.02 s)
+# Info!     [TCLC-5502]: : Design configured successfully.
+# Info!     [RTS-20067]: : Load Breakpoint/Event done (time taken 0.00 s)
+# Info!     [TCLC-5651]: : Configure/Design download time: 0:00:17
+# Info!     [TBXR-8504]: : TAPI slot number used : 0
+# 
+# Info!     [TCLC-5654]: : Will work with the clock "top_hdl.Uclock"
+# Info!     [TCLC-5501]: : Emulation started.
+# Info!     [TCLC-5501]: : Emulation stopped.
+# Info!     [TCLC-5501]: : Run is over.
+# Info!     [TCLC-5501]: : 10 cycles run. Clock : top_hdl.Uclock.
+# Info!     [TCLC-5501]: : 10 cycles run till now. Clock : top_hdl.Uclock
+# Info!     [TBXR-8505]: : Starting up clocks...
+# Info!     [TCLC-5654]: : Will work with the clock "top_hdl.Uclock"
+# Info!     [TCLC-5501]: : Emulation started.
+# Info!     [TBXR-8507]: : Creating 320 bit write channel...
+# Info!     [TBXR-8508]: : Creating 640 bit read channel...
+# Info!     [TBXR-8509]: : Initialization complete.
+# run -all 
+# ----------------------------------------------------------------
+# UVM-1.1a
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# (C) 2011      Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.accellera.org/activities/vip/release_notes_11a for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.accellera.org/activities/vip/mantis3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test bidirect_bus_test...
+# UVM_INFO top_tb.sv(219) @ 390: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	11edac8f
+#  read_not_write:	1
+#  delay:	12
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	d1eda2e9
+#  read_not_write:	1
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1050: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	59b0cc60
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1250: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	99b0b86c
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1570: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	999053b4
+#  read_not_write:	0
+#  delay:	12
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 1850: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	5969d60c
+#  read_not_write:	0
+#  delay:	10
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 2330: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	d9308b1c
+#  read_not_write:	1
+#  delay:	19
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 2610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	10e685ef
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	99b0b86c
+# UVM_INFO top_tb.sv(219) @ 3030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	16bb34b8
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3230: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	d675394a
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000014
+#  write_data:	7e0203f9
+#  read_not_write:	1
+#  delay:	14
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 3810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	bff9c661
+#  read_not_write:	1
+#  delay:	5
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 4030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	a77aaa5d
+#  read_not_write:	1
+#  delay:	6
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 4410: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	66eafc11
+#  read_not_write:	0
+#  delay:	15
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 4630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	f89ab4b7
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 5130: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	381c7a01
+#  read_not_write:	1
+#  delay:	20
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 5310: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	219a3dd1
+#  read_not_write:	1
+#  delay:	4
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 5510: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000008
+#  write_data:	e10a73f7
+#  read_not_write:	0
+#  delay:	6
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 5710: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	5e6f3d37
+#  read_not_write:	1
+#  delay:	5
+#  error:	0
+#  read_data:	66eafc11
+# UVM_INFO top_tb.sv(219) @ 5890: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100001c
+#  write_data:	9dfec9ca
+#  read_not_write:	1
+#  delay:	4
+#  error:	0
+#  read_data:	999053b4
+# UVM_INFO top_tb.sv(219) @ 6170: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	9f77e60f
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 6470: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	5080a40c
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 6810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	e7e4d91e
+#  read_not_write:	0
+#  delay:	13
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7030: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	193cdfbf
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7190: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	1e612ea8
+#  read_not_write:	1
+#  delay:	3
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 7490: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	f7b8ac79
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	66eafc11
+# UVM_INFO top_tb.sv(219) @ 7610: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	78e474d3
+#  read_not_write:	0
+#  delay:	2
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 7830: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	90086aab
+#  read_not_write:	1
+#  delay:	6
+#  error:	0
+#  read_data:	e7e4d91e
+# UVM_INFO top_tb.sv(219) @ 8110: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000014
+#  write_data:	9126c563
+#  read_not_write:	1
+#  delay:	9
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8230: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	be3cf091
+#  read_not_write:	1
+#  delay:	1
+#  error:	0
+#  read_data:	193cdfbf
+# UVM_INFO top_tb.sv(219) @ 8350: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000018
+#  write_data:	3f6a72ee
+#  read_not_write:	0
+#  delay:	2
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8570: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	607ffbf4
+#  read_not_write:	0
+#  delay:	7
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8810: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	71707dd5
+#  read_not_write:	0
+#  delay:	8
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 8910: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000008
+#  write_data:	3e72f04f
+#  read_not_write:	0
+#  delay:	1
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 9370: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	5f3d4302
+#  read_not_write:	0
+#  delay:	19
+#  error:	0
+#  read_data:	0
+# UVM_INFO top_tb.sv(219) @ 9630: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	100000c
+#  write_data:	b034a20e
+#  read_not_write:	1
+#  delay:	8
+#  error:	0
+#  read_data:	78e474d3
+# UVM_INFO top_tb.sv(219) @ 9870: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000010
+#  write_data:	b913ca32
+#  read_not_write:	1
+#  delay:	7
+#  error:	0
+#  read_data:	5f3d4302
+# UVM_INFO top_tb.sv(219) @ 10210: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	67f3a16c
+#  read_not_write:	1
+#  delay:	12
+#  error:	0
+#  read_data:	16bb34b8
+# UVM_INFO top_tb.sv(219) @ 10510: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000000
+#  write_data:	d8a87c6c
+#  read_not_write:	1
+#  delay:	10
+#  error:	0
+#  read_data:	71707dd5
+# UVM_INFO top_tb.sv(219) @ 10930: uvm_test_top.m_sequencer@@test_seq [seq_body] 
+#  addr:	1000004
+#  write_data:	116afaf0
+#  read_not_write:	0
+#  delay:	17
+#  error:	0
+#  read_data:	0
+# UVM_INFO verilog_src/uvm-1.1a/src/base/uvm_objection.svh(1120) @ 10930: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   44
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [seq_body]    40
+# ** Note: $finish    : /medsj/edatools/mti/questa10.1a/questasim/linux/../verilog_src/uvm-1.1a/src/base/uvm_root.svh(408)
+#    Time: 10930 ns  Iteration: 61  Instance: /top_tb
+# =============================================================================
+#                             SIMULATION STATISTICS                            
+# =============================================================================
+# Simulation finished at time 10930
+# 
+# Total number of TBX clocks:                                      993645
+# Total number of TBX clocks spent in HDL time advancement:        1093
+# Total number of TBX clocks spent in HDL due to callee execution: 0
+# Percentage TBX clocks spent in HDL time advance:                 0.11 %
+# -----------------------------------------------------------------------------
+# Total CPU time (user mode):                                      0.39 seconds.
+# Total time spent:                                                0.61 seconds.
+# -----------------------------------------------------------------------------
+# Info!     [RTS-20052]: : Freeing VeloceAVB1 license(s) ...
+# Info!     [RTS-20088]: : Freeing VeloceRuntime1 license ...
+# Info!     [TCLC-5501]: : Disconnected from emulator.
+# Info!     [TCLC-5501]: : project database unlocked.
+# Info!     [TCLC-5663]: : Shutting down the user runtime session.
